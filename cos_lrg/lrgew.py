@@ -1,24 +1,15 @@
 
 # import
 import pdb
-from astropy import constants as const
 import numpy as np
-from linetools.isgm.abscomponent import AbsComponent
-from linetools import utils as ltu
-from pyigm.igm.igmsightline import IGMSightline
-import astropy.units as u
-from linetools.spectralline import AbsLine, SpectralLine
-from linetools import spectralline as ltsp
-from linetools.spectra.xspectrum1d import XSpectrum1D
-import json
-from pyigm.abssys.lls import LLSSystem
 import glob
+jj
 from linetools.spectra import io as lsio
+from pyigm.abssys.lls import LLSSystem
 
 
-
-def measure_ew(xabsspath,contflspath):
-    """ Printing EWs
+def measure_ew(xabsspath,contflspath, do_aodm=False, verbose=True):
+    """ Writing EWs to JSON file
 
     Parameters
     ----------
@@ -28,6 +19,8 @@ def measure_ew(xabsspath,contflspath):
     contflspath: str
         path to the continuum normalized spectra
         The files should be in one folder which does not contain other files
+    do_aodm : bool, optional
+    verbose : bool, optional
     
     Returns
     -------
@@ -44,7 +37,8 @@ def measure_ew(xabsspath,contflspath):
     #    print(xabssfiles[i],contfls[i])
     
     for i in np.arange(len(xabssfiles)):
-        print(xabssfiles[i])
+        if verbose:
+            print(xabssfiles[i])
         lls = LLSSystem.from_json(xabssfiles[i], chk_vel=False)
         spec_file = contfls[i]
         abs_lines = lls.list_of_abslines()
@@ -56,12 +50,16 @@ def measure_ew(xabsspath,contflspath):
             # EW
             absline.measure_restew(flg=1)  # Boxcar
             # AODM
-            absline.measure_aodm()
+            if do_aodm:
+                absline.measure_aodm()
 
-            print(absline)
-            print('EW = {:g} with error {:g}'.format(absline.attrib['EW'],absline.attrib['sig_EW']))
-            print(' ')
-        print('====================================')
-        print('   ')
+            if verbose:
+                print(absline)
+                print('EW = {:g} with error {:g}'.format(absline.attrib['EW'],absline.attrib['sig_EW']))
+                print(' ')
+        if verbose:
+            print('====================================')
+            print('   ')
+        # Write updated JSON file to disk
 
 
