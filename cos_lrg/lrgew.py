@@ -3,12 +3,27 @@
 import pdb
 import numpy as np
 import glob
-jj
+import json
+
 from linetools.spectra import io as lsio
 from pyigm.abssys.lls import LLSSystem
 
+import astropy.units as u
+from linetools.spectralline import AbsLine, SpectralLine
+from linetools import spectralline as ltsp
+from linetools.spectra.xspectrum1d import XSpectrum1D
 
-def measure_ew(xabsspath,contflspath, do_aodm=False, verbose=True):
+from pkg_resources import resource_filename
+
+#xabsspth = resource_filename('cos_lrg', 'data/lrg_xabssys')
+#contflspth = resource_filename('cos_lrg', 'data/spectra')
+
+xabsspth = 'cos_lrg/data/lrg_xabssys/'
+contflspth = 'cos_lrg/data/spectra/'
+
+
+def measure_ew(xabsspath=xabsspth,contflspath=contflspth, do_aodm=False, verbose=True):
+#def measure_ew(xabsspath,contflspath, do_aodm=False, verbose=True):
     """ Writing EWs to JSON file
 
     Parameters
@@ -33,33 +48,54 @@ def measure_ew(xabsspath,contflspath, do_aodm=False, verbose=True):
     xabssfiles=np.sort(xabssfiles)
     contfls=np.sort(contfls) 
     
-    #for i in np.arange(len(xabssfiles)):
-    #    print(xabssfiles[i],contfls[i])
+    
     
     for i in np.arange(len(xabssfiles)):
         if verbose:
-            print(xabssfiles[i])
-        lls = LLSSystem.from_json(xabssfiles[i], chk_vel=False)
-        spec_file = contfls[i]
-        abs_lines = lls.list_of_abslines()
+            print('Calculating EWs for ',xabssfiles[i])
+            
+        xxfile = xabssfiles[i] 
+        contfile = contfls[i]  
+        with open(xxfile) as json_data:
+            d = json.load(json_data)
+        dd = d['components']
+        if verbose:
+            for ddkey in dd.keys():
+                print(ddkey)
 
-        for absline in abs_lines:
-            #Spectrum
-            spec = lsio.readspec(spec_file)
-            absline.analy['spec'] = spec
-            # EW
-            absline.measure_restew(flg=1)  # Boxcar
-            # AODM
-            if do_aodm:
-                absline.measure_aodm()
+        for ddkey in dd.keys():
+            ddlines=dd[ddkey]['lines']
+            for line in ddlines.keys():
+                if verbose:
+                    print(ddkey,line)
+                trans=ddlines[line]['analy']['name']
+                iline = AbsLine(trans, z=ddlines[line]['limits']['z'])
+                iline.attrib['z'] = ddlines[line]['limits']['z'] 
+                iline.analy['vlim'] = ddlines[line]['limits']['vlim']['value']*u.km/u.s #format: [-250.,80.]*u.km/u.s
+                # Set spectrum
+                iline.analy['spec'] = XSpectrum1D.from_file(contfile)
+                iline.limits.vlim[0]=ddlines[line]['limits']['vlim']['value'][0]*u.km/u.s
+                iline.limits.wvlim[0]=ddlines[line]['limits']['wvlim']['value'][0]*u.AA
+                iline.limits.zlim[0]=0. 
+                #ddlines[line]['limits']['zlim']['value'][0]
+                iline.limits.vlim[1]=ddlines[line]['limits']['vlim']['value'][1]*u.km/u.s
+                iline.limits.wvlim[1]=ddlines[line]['limits']['wvlim']['value'][1]*u.AA
+                iline.limits.zlim[1]=1. 
+                #ddlines[line]['limits']['zlim']['value'][1]
+                # Set analysis range
+                iline.analy['wvlim'] = ddlines[line]['limits']['wvlim']['value']*u.AA   
+                # EW
+                ###iline.measure_ew() # Observer frame
+                iline.measure_restew(flg=1)  # Boxcar
+                # AODM
+                if do_aodm:
+                    iline.measure_aodm()
 
-            if verbose:
-                print(absline)
-                print('EW = {:g} with error {:g}'.format(absline.attrib['EW'],absline.attrib['sig_EW']))
-                print(' ')
+                if verbose:
+                    print('EW = {:g} with error {:g}'.format(iline.attrib['EW'].value,iline.attrib['sig_EW'].value))
+                    print(' ')
         if verbose:
             print('====================================')
             print('   ')
         # Write updated JSON file to disk
-
 
