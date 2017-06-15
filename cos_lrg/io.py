@@ -2,6 +2,7 @@
 """
 
 from astropy.table import Table
+from astropy.coordinates import SkyCoord
 
 from pkg_resources import resource_filename
 
@@ -49,6 +50,25 @@ def get_data():
             fileslist.append(ifile)
 
     return fileslist
+
+def load_abssys(coord, zlrg=None):
+    """ 
+    Parameters
+    ----------
+    coord : SkyCoord
+    zlrg : float, optional
+
+    Returns
+    -------
+    abssys : GenericIGMSystem
+
+    """
+    # Match coord to table to grab z
+    if zlrg is None:
+        summ = load_summ()
+        lrg_qso_coords = SkyCoord(ra=summ['RA_QSO'], dec=summ['DEC_QSO'], unit='deg')
+        idx = np.argmin(lrg_qso_coords.separation(coord))
+
 
 
 def load_summ(summ_file=None):
