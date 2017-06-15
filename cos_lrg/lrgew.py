@@ -15,7 +15,7 @@ from linetools.spectra.xspectrum1d import XSpectrum1D
 from pkg_resources import resource_filename
 
 from setup_package.py import get_package_data
-
+from io.py import get_data
 
 
 
@@ -53,8 +53,8 @@ def measure_ew(datafile,xabsspath=xabsspth,contflspath=contflspth,outfile=outf, 
 
     """
     
-    xabssfiles=get_package_data(datafile,xabsspath)
-    contfls=get_package_data(datafile,contflspath)
+    xabssfiles=get_data(datafile,xabsspath)
+    contfls=get_data(datafile,contflspath)
     
     allews = {}
     
