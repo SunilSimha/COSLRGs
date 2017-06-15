@@ -1,4 +1,3 @@
-
 # import
 import pdb
 import numpy as np
@@ -15,48 +14,62 @@ from linetools.spectra.xspectrum1d import XSpectrum1D
 
 from pkg_resources import resource_filename
 
+from setup_package.py import get_package_data
+
+
+
+
 #xabsspth = resource_filename('cos_lrg', 'data/lrg_xabssys')
 #contflspth = resource_filename('cos_lrg', 'data/spectra')
 
 xabsspth = 'cos_lrg/data/lrg_xabssys/'
 contflspth = 'cos_lrg/data/spectra/'
+outf = 'lines_ews.json'
 
 
-def measure_ew(xabsspath=xabsspth,contflspath=contflspth, do_aodm=False, verbose=True):
+def measure_ew(datafile,xabsspath=xabsspth,contflspath=contflspth,outfile=outf, do_aodm=False, verbose=True):
 #def measure_ew(xabsspath,contflspath, do_aodm=False, verbose=True):
     """ Writing EWs to JSON file
 
     Parameters
     ----------
+    datafile: str
+        File with the list of objects (galaxies), and information about them
     xabsspath: str
         path to the abssys files
         The files should be in one folder which does not contain other files
     contflspath: str
         path to the continuum normalized spectra
         The files should be in one folder which does not contain other files
+    outfile: str
+        Output file with EWs
     do_aodm : bool, optional
     verbose : bool, optional
     
     Returns
     -------
+    allews : dict
+        EWs of all galaxies and selected transitions
 
     """
-
-    xabssfiles=glob.glob(xabsspath+'*')
-    contfls=glob.glob(contflspath+'*')
-    #sort / match
-    xabssfiles=np.sort(xabssfiles)
-    contfls=np.sort(contfls) 
     
+    xabssfiles=get_package_data(datafile,xabsspath)
+    contfls=get_package_data(datafile,contflspath)
     
+    allews = {}
     
     for i in np.arange(len(xabssfiles)):
         if verbose:
             print('Calculating EWs for ',xabssfiles[i])
-            
-        xxfile = xabssfiles[i] 
+ 
+        xabfile = xabssfiles[i] 
         contfile = contfls[i]  
-        with open(xxfile) as json_data:
+        
+        #name
+        iname = xabfile[len(xabsspath):len(xabsspath)+5]
+        allews[iname] = {}
+        
+        with open(xabfile) as json_data:
             d = json.load(json_data)
         dd = d['components']
         if verbose:
@@ -87,15 +100,34 @@ def measure_ew(xabsspath=xabsspth,contflspath=contflspth, do_aodm=False, verbose
                 # EW
                 ###iline.measure_ew() # Observer frame
                 iline.measure_restew(flg=1)  # Boxcar
+                    
+                allews[iname][trans]={}
+                allews[iname][trans]['ew']=iline.attrib['EW'] #.value
+                allews[iname][trans]['sig_ew']=iline.attrib['sig_EW'] #.value
+                
                 # AODM
                 if do_aodm:
                     iline.measure_aodm()
-
+                 
+                
                 if verbose:
-                    print('EW = {:g} with error {:g}'.format(iline.attrib['EW'].value,iline.attrib['sig_EW'].value))
+                    #print('EW = {:g} with error {:g}'.format(iline.attrib['EW'].value,iline.attrib['sig_EW'].value))
+                    print('EW = {:g} with error {:g}'.format(iline.attrib['EW'],iline.attrib['sig_EW']))
                     print(' ')
         if verbose:
             print('====================================')
             print('   ')
-        # Write updated JSON file to disk
-
+            
+    # Write updated JSON file to disk
+    print('===================================')
+    print('===================================')
+        
+    if verbose:
+        print(allews)
+        
+    jdict = ltu.jsonify(allews)
+    # Write
+    ltu.savejson(outfile, jdict, easy_to_read=True, overwrite=True)   
+        
+    return allews
+        
