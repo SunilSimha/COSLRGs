@@ -4,32 +4,21 @@ import numpy as np
 import glob
 import json
 
-from linetools.spectra import io as lsio
-from pyigm.abssys.lls import LLSSystem
 
 import astropy.units as u
 from linetools.spectralline import AbsLine, SpectralLine
-from linetools import spectralline as ltsp
 from linetools.spectra.xspectrum1d import XSpectrum1D
 
 from pkg_resources import resource_filename
 
-from setup_package.py import get_package_data
-from io.py import get_data
+from cos_lrg.io import get_data
 
+xabsspth = resource_filename('cos_lrg', 'data/lrg_xabssys/')
+contflspth = resource_filename('cos_lrg', 'data/spectra/')
 
-
-#xabsspth = resource_filename('cos_lrg', 'data/lrg_xabssys')
-#contflspth = resource_filename('cos_lrg', 'data/spectra')
-
-xabsspth = 'cos_lrg/data/lrg_xabssys/'
-contflspth = 'cos_lrg/data/spectra/'
-outf = 'lines_ews.json'
-
-
-def measure_ew(datafile,xabsspath=xabsspth,contflspath=contflspth,outfile=outf, do_aodm=False, verbose=True):
-#def measure_ew(xabsspath,contflspath, do_aodm=False, verbose=True):
-    """ Writing EWs to JSON file
+def measure_ew(datafile, xabsspath=xabsspth, contflspath=contflspth,
+    do_aodm=False, verbose=True):
+    """ Writing EWs to JSON files
 
     Parameters
     ----------
