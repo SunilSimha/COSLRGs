@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: COSLRGs
+Version: 0.1.dev0
+Summary: Data and Analysis of ELG CGM
+Home-page: https://github.com/marijana777/COSLRGs
+Author: Smailagic & Associates
+Author-email: msmailag@ucsc.edu
+License: BSD
+Description: # COSLRGs
+Platform: UNKNOWN
+Requires: Python (>2.7.0)
+Provides: COSLRGs
