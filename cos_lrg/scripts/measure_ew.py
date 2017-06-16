@@ -10,7 +10,7 @@ def parser(options=None):
     import argparse
 
     parser = argparse.ArgumentParser(description='Measure EWs v0.1')
-    parser.add_argument("lrg_name", type=str, help="LRG name (e.g. J022600+001500 or ALL")
+    parser.add_argument("lrg_name", type=str, help="LRG name (e.g. J0226+0015 or ALL")
 
     if options is None:
         args = parser.parse_args()
@@ -27,7 +27,7 @@ def main(args, unit_test=False, **kwargs):
     from astropy.coordinates import SkyCoord
 
 
-    from cos_lrg.utils import match_coord_to_summ
+    from cos_lrg.utils import get_coord
     from cos_lrg.io import load_abssys
 
 
@@ -35,7 +35,7 @@ def main(args, unit_test=False, **kwargs):
     if args.lrg_name == 'ALL':
         pdb.set_trace() # NOT READY FOR THIS YET
     else:
-        icoords = [radec_to_coord(ic)]
+        icoords = [get_coord(args.lrg_name)]
 
     for icoord in icoords:
         # Find the closest

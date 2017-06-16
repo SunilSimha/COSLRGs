@@ -17,10 +17,12 @@ def data_path(filename):
     data_dir = os.path.join(os.path.dirname(__file__), 'files')
     return os.path.join(data_dir, filename)
 
+
 def test_coord():
     coord = get_coord('J0026+0015')
     #
     assert isinstance(coord, SkyCoord)
+
 
 def test_match():
     """ Test loading the summary file

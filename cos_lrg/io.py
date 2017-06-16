@@ -4,6 +4,8 @@
 import pdb
 import os
 
+import numpy as np
+
 from astropy.table import Table
 from astropy.coordinates import SkyCoord
 from astropy import units as u
@@ -70,9 +72,9 @@ def load_abssys(coord, zlrg=None):
     from pyigm.abssys.igmsys import IGMSystem
     # Match coord to table to grab z
     if zlrg is None:
-        summ = load_summ()
-        lrg_qso_coords = SkyCoord(ra=summ['RA_QSO'], dec=summ['DEC_QSO'], unit='deg')
-        idx = np.argmin(lrg_qso_coords.separation(coord))
+        from cos_lrg.utils import match_coord_to_summ
+        row = match_coord_to_summ(coord)
+        zlrg = row['Z_GAL']
     # Build the filename
     ra = coord.ra.to_string(unit=u.hour,sep='',pad=True, precision=2)[0:4]
     dec = coord.dec.to_string(sep='',pad=True,alwayssign=True, precision=1)[0:5]
