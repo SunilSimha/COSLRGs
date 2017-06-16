@@ -26,19 +26,20 @@ def data_path(filename):
 def test_load_spectrum():
     spec = load_spectrum('J0226+0015')
     assert isinstance(spec, XSpectrum1D)
-    
+
 
 def test_load_abssys():
     """ Load AbsSystem 
     """
-    abssys = load_abssys('J0226+0015')
+    abssys, _ = load_abssys('J0226+0015')
     # Test
     assert isinstance(abssys, IGMSystem)
     #
     coord = get_coord('J0226+0015')
-    abssys = load_abssys(coord)
+    abssys, filename = load_abssys(coord)
     # Test
     assert isinstance(abssys, IGMSystem)
+    assert isinstance(filename, str)
 
 def test_load_summ():
     """ Test loading the summary file

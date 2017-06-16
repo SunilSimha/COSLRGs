@@ -76,6 +76,8 @@ def load_abssys(icoord, zlrg=None):
     Returns
     -------
     abssys : GenericIGMSystem
+    full_file : str
+      Filename with path
 
     """
     from pyigm.abssys.igmsys import IGMSystem
@@ -99,7 +101,7 @@ def load_abssys(icoord, zlrg=None):
     # Load
     abssys = IGMSystem.from_json(full_file)
     # Return
-    return abssys
+    return abssys, full_file
 
 
 def load_spectrum(icoord, flux=False):
