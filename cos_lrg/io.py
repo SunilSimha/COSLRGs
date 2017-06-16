@@ -65,6 +65,7 @@ def get_data():
 
     return fileslist
 
+
 def load_abssys(icoord, zlrg=None):
     """ 
     Parameters
@@ -78,13 +79,8 @@ def load_abssys(icoord, zlrg=None):
 
     """
     from pyigm.abssys.igmsys import IGMSystem
-    # Coordiante
-    if isinstance(icoord, basestring):
-        coord = get_coord(icoord)
-    elif isinstance(icoord, SkyCoord):
-        coord = icoord
-    else:
-        raise IOError("Bad input")
+    # Convert coordinate (if needed)
+    coord = get_coord(icoord)
     # Match coord to table to grab z
     if zlrg is None:
         row = match_coord_to_summ(coord)
@@ -106,7 +102,32 @@ def load_abssys(icoord, zlrg=None):
     return abssys
 
 
-#def load_spectra(coord):
+def load_spectrum(icoord, flux=False):
+    """ 
+    Parameters
+    ----------
+    icoord : str or SkyCoord
+
+    Returns
+    -------
+    spec : XSpectrum1D
+
+    """
+    from linetools.spectra.io import readspec
+    coord = get_coord(icoord)
+    # Build the filename
+    ra = coord.ra.to_string(unit=u.hour,sep='',pad=True, precision=2)[0:6]
+    dec = coord.dec.to_string(sep='',pad=True,alwayssign=True, precision=1)[0:7]
+    # File
+    if flux:
+        pdb.set_trace()
+    else:
+        filename = 'J{:s}{:s}_AB_n2.fits'.format(ra, dec)
+        full_file = resource_filename('cos_lrg', 'data/spectra/{:s}'.format(filename))
+    # Load
+    spec = readspec(full_file)
+    # Return
+    return spec
 
 def load_summ(summ_file=None):
     """ Load the Summary file 

@@ -13,12 +13,17 @@ from pyigm.abssys.igmsys import IGMSystem
 
 from ..io import load_abssys
 from ..io import load_summ
+from ..io import load_spectrum
 from ..utils import get_coord
 
 
 def data_path(filename):
     data_dir = os.path.join(os.path.dirname(__file__), 'files')
     return os.path.join(data_dir, filename)
+
+def test_load_spectrum():
+    spec = load_spectrum('J0226+0015')
+    pytest.set_trace()
 
 def test_load_abssys():
     """ Load AbsSystem 
