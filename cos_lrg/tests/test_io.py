@@ -12,10 +12,15 @@ from astropy.table import Table
 from linetools.spectra.xspectrum1d import XSpectrum1D
 from pyigm.abssys.igmsys import IGMSystem
 
-from ..io import load_abssys
-from ..io import load_summ
-from ..io import load_spectrum
-from ..utils import get_coord
+#from ..io import load_abssys
+#from ..io import load_summ
+#from ..io import load_spectrum
+#from ..utils import get_coord
+
+from cos_lrg.utils import get_coord
+from cos_lrg.io import load_abssys
+from cos_lrg.io import load_summ
+from cos_lrg.io import load_spectrum
 
 
 def data_path(filename):

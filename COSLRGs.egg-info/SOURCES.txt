@@ -10,6 +10,7 @@ cos_lrg/__init__.py
 cos_lrg/io.py
 cos_lrg/lrgew.py
 cos_lrg/setup_package.py
+cos_lrg/systems.py
 cos_lrg/utils.py
 cos_lrg/scripts/__init__.py
 cos_lrg/scripts/measure_ew.py
