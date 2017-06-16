@@ -23,6 +23,10 @@ def data_path(filename):
 def test_load_abssys():
     """ Load AbsSystem 
     """
+    abssys = load_abssys('J0226+0015')
+    # Test
+    assert isinstance(abssys, IGMSystem)
+    #
     coord = get_coord('J0226+0015')
     abssys = load_abssys(coord)
     # Test

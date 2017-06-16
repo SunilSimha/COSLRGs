@@ -9,7 +9,6 @@ from astropy import units as u
 from linetools.scripts.utils import coord_arg_to_coord
 from linetools.utils import radec_to_coord
 
-from cos_lrg.io import load_summ
 
 def get_coord(icoord):
     """ 
@@ -48,6 +47,7 @@ def match_coord_to_summ(coord, verbose=True):
       Row in the Summary file that is the closest match
       Could restrict to be within some tolerance (to avoid error)
     """
+    from cos_lrg.io import load_summ # This needs to be imported here
 
     # Load Summary file
     summ = load_summ()

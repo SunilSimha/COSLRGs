@@ -12,6 +12,14 @@ from astropy import units as u
 
 from pkg_resources import resource_filename
 
+from cos_lrg.utils import match_coord_to_summ
+from cos_lrg.utils import get_coord
+
+try:
+    basestring
+except NameError:  # For Python 3
+    basestring = str
+
 def get_data():
     """
     Getting files with data
@@ -57,11 +65,11 @@ def get_data():
 
     return fileslist
 
-def load_abssys(coord, zlrg=None):
+def load_abssys(icoord, zlrg=None):
     """ 
     Parameters
     ----------
-    coord : SkyCoord
+    coord : SkyCoord or str
     zlrg : float, optional
 
     Returns
@@ -70,9 +78,15 @@ def load_abssys(coord, zlrg=None):
 
     """
     from pyigm.abssys.igmsys import IGMSystem
+    # Coordiante
+    if isinstance(icoord, basestring):
+        coord = get_coord(icoord)
+    elif isinstance(icoord, SkyCoord):
+        coord = icoord
+    else:
+        raise IOError("Bad input")
     # Match coord to table to grab z
     if zlrg is None:
-        from cos_lrg.utils import match_coord_to_summ
         row = match_coord_to_summ(coord)
         zlrg = row['Z_GAL']
     # Build the filename
@@ -92,6 +106,7 @@ def load_abssys(coord, zlrg=None):
     return abssys
 
 
+#def load_spectra(coord):
 
 def load_summ(summ_file=None):
     """ Load the Summary file 
