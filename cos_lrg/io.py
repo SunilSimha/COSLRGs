@@ -1,8 +1,12 @@
 """ Module for I/O with COS-LRGs
 """
 
+import pdb
+import os
+
 from astropy.table import Table
 from astropy.coordinates import SkyCoord
+from astropy import units as u
 
 from pkg_resources import resource_filename
 
@@ -63,11 +67,27 @@ def load_abssys(coord, zlrg=None):
     abssys : GenericIGMSystem
 
     """
+    from pyigm.abssys.igmsys import IGMSystem
     # Match coord to table to grab z
     if zlrg is None:
         summ = load_summ()
         lrg_qso_coords = SkyCoord(ra=summ['RA_QSO'], dec=summ['DEC_QSO'], unit='deg')
         idx = np.argmin(lrg_qso_coords.separation(coord))
+    # Build the filename
+    ra = coord.ra.to_string(unit=u.hour,sep='',pad=True, precision=2)[0:4]
+    dec = coord.dec.to_string(sep='',pad=True,alwayssign=True, precision=1)[0:5]
+    # Full file
+    filename = 'LRG_J{:s}{:s}_z{:0.3f}.json'.format(ra, dec, zlrg)
+    full_file = resource_filename('cos_lrg', 'data/lrg_abs_syst_1/{:s}'.format(filename))
+    # Check
+    if not os.path.isfile(full_file):
+        print("No file named {:s} found!!".format(full_file))
+        print("You may need to rename your file")
+        pdb.set_trace()
+    # Load
+    abssys = IGMSystem.from_json(full_file)
+    # Return
+    return abssys
 
 
 

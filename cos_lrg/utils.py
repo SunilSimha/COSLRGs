@@ -6,7 +6,35 @@ import numpy as np
 from astropy.coordinates import SkyCoord
 from astropy import units as u
 
+from linetools.scripts.utils import coord_arg_to_coord
+from linetools.utils import radec_to_coord
+
 from cos_lrg.io import load_summ
+
+def get_coord(icoord):
+    """ 
+    Parameters
+    ----------
+    icoord : str
+      e.g. J0026+0015
+
+    Returns
+    -------
+    coord : SkyCoord
+
+    """
+    if len(icoord) == 10:
+        # Padding
+        gd_coord = 'J{:s}00{:s}00'.format(icoord[1:5], icoord[-5:])
+    else:
+        gd_coord = icoord
+    # Another manipulation
+    ic = coord_arg_to_coord(gd_coord)
+    # Finally
+    coord = radec_to_coord(ic)
+    # Return
+    return coord
+
 
 def match_coord_to_summ(coord, verbose=True):
     """ 

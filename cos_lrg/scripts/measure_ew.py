@@ -26,24 +26,25 @@ def main(args, unit_test=False, **kwargs):
 
     from astropy.coordinates import SkyCoord
 
-    from linetools.scripts.utils import coord_arg_to_coord
-    from linetools.utils import radec_to_coord
 
     from cos_lrg.utils import match_coord_to_summ
+    from cos_lrg.io import load_abssys
 
 
     #
     if args.lrg_name == 'ALL':
         pdb.set_trace() # NOT READY FOR THIS YET
     else:
-        ic = coord_arg_to_coord(args.lrg_name)
         icoords = [radec_to_coord(ic)]
 
     for icoord in icoords:
         # Find the closest
         #
         row = match_coord_to_summ(icoord)
+        coord = SkyCoord(ra=row['RA_QSO'], dec=row['DEC_QSO'], unit='deg')
+
         # Load the AbsSystem
+        load_abssys(coord, zlrg=row['Z_GAL'])
         pdb.set_trace()
 
 
