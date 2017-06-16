@@ -116,13 +116,13 @@ def load_spectrum(icoord, flux=False):
     from linetools.spectra.io import readspec
     coord = get_coord(icoord)
     # Build the filename
-    ra = coord.ra.to_string(unit=u.hour,sep='',pad=True, precision=2)[0:6]
-    dec = coord.dec.to_string(sep='',pad=True,alwayssign=True, precision=1)[0:7]
+    ra = coord.ra.to_string(unit=u.hour,sep='',pad=True, precision=2)
+    dec = coord.dec.to_string(sep='',pad=True,alwayssign=True, precision=1)
     # File
     if flux:
         pdb.set_trace()
     else:
-        filename = 'J{:s}{:s}_AB_n2.fits'.format(ra, dec)
+        filename = 'J{:s}{:s}.fits'.format(ra, dec)
         full_file = resource_filename('cos_lrg', 'data/spectra/{:s}'.format(filename))
     # Load
     spec = readspec(full_file)

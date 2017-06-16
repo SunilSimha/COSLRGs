@@ -9,6 +9,7 @@ import numpy as np
 
 from astropy.table import Table
 
+from linetools.spectra.xspectrum1d import XSpectrum1D
 from pyigm.abssys.igmsys import IGMSystem
 
 from ..io import load_abssys
@@ -21,9 +22,11 @@ def data_path(filename):
     data_dir = os.path.join(os.path.dirname(__file__), 'files')
     return os.path.join(data_dir, filename)
 
+
 def test_load_spectrum():
     spec = load_spectrum('J0226+0015')
-    pytest.set_trace()
+    assert isinstance(spec, XSpectrum1D)
+    
 
 def test_load_abssys():
     """ Load AbsSystem 
