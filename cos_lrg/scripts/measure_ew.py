@@ -25,7 +25,7 @@ def main(args, unit_test=False, **kwargs):
     """
     import numpy as np
     import warnings
-    
+
     from cos_lrg.io import load_spectrum
     from cos_lrg.utils import get_coord
     from cos_lrg.io import load_abssys
