@@ -9,9 +9,9 @@
 This script returns systems for an LRG
 """
 
-import cos_lrg.scripts.systems as systems
+import cos_lrg.scripts.make_systems as make_systems
 
 if __name__ == '__main__':
-    args = systems.parser()
-    systems.main(args)
+    args = make_systems.parser()
+    make_systems.main(args)
 

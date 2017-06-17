@@ -14,7 +14,7 @@ def parser(options=None):
 
     import argparse
 
-    parser = argparse.ArgumentParser(description='Measure EWs v0.1')
+    parser = argparse.ArgumentParser(description='Generate LRG system file from igmguesses v0.1')
     parser.add_argument("lrg_name", type=str, help="LRG name (e.g. J0226+0015 or ALL")
     parser.add_argument("--skip_check", default=False, action='store_true', help="Skip set_trace that asks for permission")
 
