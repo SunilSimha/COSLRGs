@@ -7,6 +7,7 @@ import astropy.units as u
 from linetools.spectralline import AbsLine, SpectralLine
 from linetools.spectra.xspectrum1d import XSpectrum1D
 from pyigm.abssys.igmsys import IGMSystem
+from linetools.isgm import abscomponent as lt_abscomp
 import pdb
 
 
@@ -25,48 +26,6 @@ def parser(options=None):
     return args
 
 
-### could be ignored?
-def abs_sys_ignore(allabslrgs):
-    """ 
-    Generate systems for all LRGs
-    
-    Parameters
-    ----------
-    allabslrgs - dict
-        Contains info about all absorption lines in all LRGs
-        
-    Returns
-    -------
-    linesystems - dict
-        Dict with systems
-    
-    """
-    
-    lrgs = allabslrgs.keys()
-    linesystems = {}
-    
-    for ilrg in lrgs:
-        ilrgallabs = allabslrgs[ilrg]
-        linekeys = ilrgallabs.keys()
-        sysnames = []
-        linesys = {}  
-        linesystems[ilrg]={}
-
-        for iline in linekeys:
-            sysname = iline.split(" ")[0]
-            if sysname not in sysnames:
-                sysnames.append(sysname)
-                linesys[sysname]=[]
-            linesys[sysname].append(ilrgallabs[iline])
-
-        for sysname in sysnames: 
-            abscomp = AbsComponent.from_abslines(linesys[sysname])
-            lsys = IGMSystem.from_components([abscomp])
-            linesystems[ilrg][sysname] = lsys
-
-    return linesystems
-
-
 
 
 def main(args, unit_test=False, **kwargs):
@@ -76,8 +35,8 @@ def main(args, unit_test=False, **kwargs):
     import warnings
 
     from cos_lrg.io import load_spectrum
-    from cos_lrg.utils import get_coord
-    from cos_lrg.io import load_abssys
+    from cos_lrg.utils import get_coord, match_coord_to_summ
+    from cos_lrg.io import load_abssys, load_guesses
 
 
     #
@@ -86,51 +45,48 @@ def main(args, unit_test=False, **kwargs):
     else:
         icoords = [get_coord(args.lrg_name)]
 
-    linesystems = {}
+    lrgs_sys = []
 
     for icoord in icoords:
         # Load the Spectrum
         spec = load_spectrum(icoord)
-        # Load the AbsSystem
-        abssys, filename = load_abssys(icoord)#, zlrg=row['Z_GAL'])
+        row = match_coord_to_summ(icoord)
+        zlrg = row['Z_GAL']
+        # load guesses file and systems
+        igm_systems, guesses_file = load_guesses(icoord)
 
-	#sysnames = []
-        linesys = {}  
-        linesystems[ilrg]={}
+        # find lrg system(s?)
+        dzabssys = []
+        for igm_sys in igm_systems:   ## igm_sys[0].zabs
+            dzabssys.append(np.abs(igm_sys.zabs - zlrg))
+        idx = np.argmin(dzabssys)
+        lrgsys = igm_systems[idx]
 
-        for iline in abssys.list_of_abslines():
-            iline.analy['spec'] = spec
-            #iline.measure_restew(flg=1)  # Boxcar
+        # write lrg system in a file
 
-            sysname = iline.analy['name'].split(" ")[0]
-            #if sysname not in sysnames:
-	    if sysname not in linesys.keys():
-                #sysnames.append(sysname)
-                linesys[sysname]=[]
-            linesys[sysname].append(iline)
+        # new folder
+        lent = len(guesses_file.split('/')[-1]) + len(guesses_file.split('/')[-2]) + 1
+        lrg_g_folder = guesses_file[0:-lent] + 'lrg_from_guesses/'
+        pdb.set_trace()
+        # Create new folder
+        try:
+            os.mkdir(lrg_g_folder)
+        except OSError:  # likely already exists
+            pass
+        # filename
+        # Build the filename
+        coord = get_coord(icoord)
+        ra = coord.ra.to_string(unit=u.hour, sep='', pad=True, precision=2)[0:4]
+        dec = coord.dec.to_string(sep='', pad=True, alwayssign=True, precision=1)[0:5]
+        # Full file
+        lrg_g_file = 'LRG_guesses_J{:s}{:s}_z{:0.3f}.json'.format(ra, dec, zlrg)
+        lrg_g_file_full = lrg_g_folder+lrg_g_file
+        print("Writing/Overwriting file {:s} ?".format(lrg_g_file_full))
+        pdb.set_trace()
+        lrgsys.write_json(outfil=lrg_g_file_full)
+        lrgs_sys.append(lrgsys)
 
-
-        #for sysname in sysnames: 
-        for sysname in linesys.keys(): 
-            abscomp = AbsComponent.from_abslines(linesys[sysname])
-            lsys = IGMSystem.from_components([abscomp])
-            linesystems[ilrg][sysname] = lsys
-
-        #write to file
-        #abssys.write_json(outfil=filename_sys) 
-
-
-    return linesystems
-
-
-
-
+    return lrgs_sys
 
 
-        # Write to file
-        #if not args.skip_check:
-        #    print("About to overwrite the file: {:s}".format(filename))
-        #    warnings.warn("Continue only if you know what you are doing!!")
-        #    pdb.set_trace()
-        #abssys.write_json(outfil=filename)
 

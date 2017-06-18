@@ -5,10 +5,15 @@ import pdb
 import os
 
 import numpy as np
+import glob as glob
 
 from astropy.table import Table
 from astropy.coordinates import SkyCoord
 from astropy import units as u
+
+from linetools.isgm.abscomponent import AbsComponent
+from linetools import utils as ltu
+from pyigm.igm.igmsightline import IGMSightline
 
 from pkg_resources import resource_filename
 
@@ -102,6 +107,47 @@ def load_abssys(icoord, zlrg=None):
     abssys = IGMSystem.from_json(full_file)
     # Return
     return abssys, full_file
+
+
+def load_guesses(icoord):
+    """
+    Parameters
+    ----------
+    coord : SkyCoord or str
+
+    Returns
+    -------
+    guesses_systems : list of GenericIGMSystems?
+    full_file : str
+      Filename with path
+
+    """
+    from pyigm.abssys.igmsys import IGMSystem
+    # Convert coordinate (if needed)
+    coord = get_coord(icoord)
+    # Build the filename
+    ra = coord.ra.to_string(unit=u.hour,sep='',pad=True, precision=2)[0:4]
+    # dec = coord.dec.to_string(sep='',pad=True,alwayssign=True, precision=1)[0:5]  # should update names?
+    # Full file
+    filename = 'J{:s}_igmgs.json'.format(ra)
+    full_file = resource_filename('cos_lrg', 'data/guesses/{:s}'.format(filename))
+    # Check
+    if not os.path.isfile(full_file):
+        print("No file named {:s} found!!".format(full_file))
+        print("You may need to rename your file")
+        pdb.set_trace()
+    # Load
+    igm_guess = ltu.loadjson(full_file)
+    components = []
+    for key in igm_guess['cmps'].keys():
+        comp = AbsComponent.from_dict(igm_guess['cmps'][key])  # , chk_vel=False)
+        # Could add RA/DEC here
+        components.append(comp)
+    igm_sight = IGMSightline.from_components(components)   #, zem=zems[ilrg])
+    igm_sys = igm_sight.make_igmsystems()  # WARNINGS are expected
+    # Return
+    return igm_sys, full_file
+
 
 
 def load_spectrum(icoord, flux=False):
