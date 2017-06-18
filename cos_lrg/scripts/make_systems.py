@@ -45,20 +45,19 @@ def main(args, unit_test=False, **kwargs):
     else:
         icoords = [get_coord(args.lrg_name)]
 
-    lrgs_sys = []
 
     for icoord in icoords:
-        # Load the Spectrum
-        spec = load_spectrum(icoord)
         row = match_coord_to_summ(icoord)
         zlrg = row['Z_GAL']
         # load guesses file and systems
         igm_systems, guesses_file = load_guesses(icoord)
 
         # find lrg system(s?)
-        dzabssys = []
-        for igm_sys in igm_systems:   ## igm_sys[0].zabs
-            dzabssys.append(np.abs(igm_sys.zabs - zlrg))
+        z_sys = [igm_sys.zabs for igm_sys in igm_systems]
+        dzabssys = np.abs(np.array(z_sys) - zlrg)
+        #dzabssys = []
+        #for igm_sys in igm_systems:   ## igm_sys[0].zabs
+        #    dzabssys.append(np.abs(igm_sys.zabs - zlrg))
         idx = np.argmin(dzabssys)
         lrgsys = igm_systems[idx]
 
@@ -84,9 +83,7 @@ def main(args, unit_test=False, **kwargs):
         print("Writing/Overwriting file {:s} ?".format(lrg_g_file_full))
         pdb.set_trace()
         lrgsys.write_json(outfil=lrg_g_file_full)
-        lrgs_sys.append(lrgsys)
 
-    return lrgs_sys
 
 
 
