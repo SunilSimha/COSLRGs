@@ -8,6 +8,7 @@ from linetools.spectralline import AbsLine, SpectralLine
 from linetools.spectra.xspectrum1d import XSpectrum1D
 from pyigm.abssys.igmsys import IGMSystem
 from linetools.isgm import abscomponent as lt_abscomp
+from linetools import utils as ltu
 import pdb
 
 
@@ -60,6 +61,10 @@ def main(args, unit_test=False, **kwargs):
         #    dzabssys.append(np.abs(igm_sys.zabs - zlrg))
         idx = np.argmin(dzabssys)
         lrgsys = igm_systems[idx]
+
+        # check
+        if np.abs(ltu.dv_from_z(z_sys[idx], zlrg).value) >= 2000.:
+            print('Velocity difference too large: ',ltu.v_from_z(z_sys[idx], zlrg))
 
         # write lrg system in a file
 
