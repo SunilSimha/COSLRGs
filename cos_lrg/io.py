@@ -71,12 +71,14 @@ def get_data():
     return fileslist
 
 
-def load_abssys(icoord, zlrg=None):
+def load_abssys(icoord, zlrg=None, foldername = 'lrg_xabssys'):
     """ 
     Parameters
     ----------
     coord : SkyCoord or str
     zlrg : float, optional
+    foldername : str, optional
+       e.g. 'lrg_xabssys' , 'lrg_abs_syst_1', 'lrg_from_guesses'
 
     Returns
     -------
@@ -97,7 +99,7 @@ def load_abssys(icoord, zlrg=None):
     dec = coord.dec.to_string(sep='',pad=True,alwayssign=True, precision=1)[0:5]
     # Full file
     filename = 'LRG_J{:s}{:s}_z{:0.3f}.json'.format(ra, dec, zlrg)
-    full_file = resource_filename('cos_lrg', 'data/lrg_abs_syst_1/{:s}'.format(filename))
+    full_file = resource_filename('cos_lrg', 'data/'+foldername+'/{:s}'.format(filename))
     # Check
     if not os.path.isfile(full_file):
         print("No file named {:s} found!!".format(full_file))

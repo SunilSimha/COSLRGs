@@ -63,7 +63,8 @@ def main(args, unit_test=False, **kwargs):
         lrgsys = igm_systems[idx]
 
         # check
-        if np.abs(ltu.dv_from_z(z_sys[idx], zlrg).value) >= 2000.:
+        #pdb.set_trace()
+        if np.abs(ltu.dv_from_z(z_sys[idx], float(zlrg)).value) >= 2000.:
             print('Velocity difference too large: ',ltu.v_from_z(z_sys[idx], zlrg))
 
         # write lrg system in a file
