@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+#
+# See top-level LICENSE file for Copyright information
+#
+# -*- coding: utf-8 -*-
+
+
+"""
+This script returns systems for an LRG
+"""
+
+import cos_lrg.scripts.make_systems as make_systems
+
+if __name__ == '__main__':
+    args = make_systems.parser()
+    make_systems.main(args)
+
