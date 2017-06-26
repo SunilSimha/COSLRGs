@@ -4,6 +4,8 @@
 import numpy as np
 import os
 import astropy.units as u
+from astropy.coordinates import SkyCoord
+
 from linetools.spectralline import AbsLine, SpectralLine
 from linetools.spectra.xspectrum1d import XSpectrum1D
 from pyigm.abssys.igmsys import IGMSystem
@@ -11,6 +13,9 @@ from linetools.isgm import abscomponent as lt_abscomp
 from linetools import utils as ltu
 import pdb
 
+from cos_lrg.utils import match_coord_to_summ
+from cos_lrg.utils import get_coord
+from cos_lrg.io import load_abssys, load_summ
 
 def parser(options=None):
 
@@ -42,7 +47,18 @@ def main(args, unit_test=False, **kwargs):
 
     #
     if args.lrg_name == 'ALL':
-        pdb.set_trace() # NOT READY FOR THIS YET
+        #pdb.set_trace() # NOT READY FOR THIS YET
+        icoords = []
+        summ = load_summ()  # (summ_file=None)
+        lrg_qso_coords = SkyCoord(ra=summ['RA_QSO'], dec=summ['DEC_QSO'], unit='deg')
+        for iicoords in lrg_qso_coords:
+            name = 'J{:s}{:s}'.format(
+                iicoords.ra.to_string(unit=u.hour,
+                                     sep='', pad=True, precision=2), iicoords.dec.to_string(sep='',
+                                                                                           pad=True, alwayssign=True,
+                                                                                           precision=1))
+            icoords.append(get_coord(name))
+
     else:
         icoords = [get_coord(args.lrg_name)]
 
@@ -72,7 +88,7 @@ def main(args, unit_test=False, **kwargs):
         # new folder
         lent = len(guesses_file.split('/')[-1]) + len(guesses_file.split('/')[-2]) + 1
         lrg_g_folder = guesses_file[0:-lent] + 'lrg_from_guesses/'
-        pdb.set_trace()
+        #pdb.set_trace()
         # Create new folder
         try:
             os.mkdir(lrg_g_folder)
@@ -87,7 +103,7 @@ def main(args, unit_test=False, **kwargs):
         lrg_g_file = 'LRG_guesses_J{:s}{:s}_z{:0.3f}.json'.format(ra, dec, zlrg)
         lrg_g_file_full = lrg_g_folder+lrg_g_file
         print("Writing/Overwriting file {:s} ?".format(lrg_g_file_full))
-        pdb.set_trace()
+        #pdb.set_trace()
         lrgsys.write_json(outfil=lrg_g_file_full)
 
 
