@@ -88,8 +88,8 @@ def make_cgm(icoord):
     #igmsys = IGMSystem('CGM', radec_qso, gal.z,
     #                   [-500, 500] * u.km / u.s)  # e.g. / or use existing one? #read from the file?
     ## should read from file make_system's file
-    igmsys, full_file = load_abssys(icoord,foldername='lrg_from_guesses')
-    #igmsys, full_file = load_abssys(icoord,foldername='lrg_xabssys')   #test
+    #igmsys, full_file = load_abssys(icoord,foldername='lrg_from_guesses')
+    igmsys, full_file = load_abssys(icoord,foldername='lrg_xabssys')
     cgmabs_1 = cgm.CGMAbsSys(gal, igmsys)
     cgm1.rlim = R_lrg
     cgm1.cgm_abs = cgmabs_1  # = List of CGMAbsSys classes
@@ -117,15 +117,21 @@ def make_survey(summ_file=None):
     lrgs_cgmabs = []
 
     summ = load_summ()
-    lrg_qso_coords = SkyCoord(ra=summ['RA_QSO'], dec=summ['DEC_QSO'], unit='deg')
+    #lrg_qso_coords = SkyCoord(ra=summ['RA_QSO'], dec=summ['DEC_QSO'], unit='deg')
+    lrg_qso_coords = SkyCoord(ra=summ['RA_GAL'], dec=summ['DEC_GAL'], unit='deg')
     for icoords in lrg_qso_coords:
+        #pdb.set_trace()
         name = 'J{:s}{:s}'.format(
             icoords.ra.to_string(unit=u.hour,
                 sep='',pad=True, precision=2),icoords.dec.to_string(sep='',
                 pad=True,alwayssign=True, precision=1))
-        icgm = make_cgm(name)
+        #pdb.set_trace()
+        icoord = get_coord(name)
+        icgm = make_cgm(icoord)
         lrgs_cgmabs.append(icgm.cgm_abs)
     LRGsurvey.cgm_abs = lrgs_cgmabs # list of CGMAbsSys objects - append for all LRGs
+
+    # and write it in a file
 
     return LRGsurvey
 
