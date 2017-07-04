@@ -37,6 +37,10 @@ except NameError:  # For Python 3
     basestring = str
 
 
+chk_vel=False
+chk_sep=False
+chk_z=False
+
 
 def make_gal(icoord):
     """
@@ -86,7 +90,7 @@ def make_cgmabs(icoord, towrite = True):
     #cgm1 = cgm.CGM(gal)
 
     igmsys, full_file = load_abssys(icoord,foldername='lrg_xabssys')
-    cgmabs_1 = cgm.CGMAbsSys(gal, igmsys)
+    cgmabs_1 = cgm.CGMAbsSys(gal, igmsys,chk_vel=False,chk_sep=False, chk_z=False)
     #cgm1.rlim = R_lrg
     #cgm1.cgm_abs = cgmabs_1  # = List of CGMAbsSys classes
 

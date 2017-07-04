@@ -1,20 +1,20 @@
 {
-    "CreationDate": "2017-Jun-14",
-    "DEC": 5.055553714435065e-06,
+    "CreationDate": "2017-Jul-04",
+    "DEC": 7.583329651092242e-06,
     "NHI": 0.0,
     "Name": "J000000.0015+000000.0091_z0.539",
-    "RA": 1.2722222953846365e-05,
+    "RA": 1.908333479658155e-05,
     "Refs": [],
     "ZH": 0.0,
-    "abs_type": "Generic",
-    "class": "GenericAbsSystem",
+    "abs_type": "IGMSystem",
+    "class": "IGMSystem",
     "components": {
         "CIII_z0.53889": {
             "A": null,
-            "DEC": 5.055553714435065e-06,
+            "DEC": 7.583329651092242e-06,
             "Ej": 0.0,
             "Name": "CIII_z0.53889",
-            "RA": 1.2722222953846365e-05,
+            "RA": 1.908333479658155e-05,
             "Zion": [
                 6,
                 3
@@ -30,13 +30,32 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "CIII 977"
+                        "name": "CIII 977",
+                        "pix": [
+                            3133,
+                            3134,
+                            3135,
+                            3136,
+                            3137,
+                            3138,
+                            3139,
+                            3140,
+                            3141,
+                            3142,
+                            3143,
+                            3144,
+                            3145,
+                            3146,
+                            3147,
+                            3148
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.4823866347685012
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -47,12 +66,12 @@
                             "unit": "km / s",
                             "value": 175.47615381008447
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 13.906460702243427,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.06485170059434302
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -156,10 +175,10 @@
         },
         "CII_z0.53755": {
             "A": null,
-            "DEC": 5.055553714435065e-06,
+            "DEC": 7.583329651092242e-06,
             "Ej": 0.0,
             "Name": "CII_z0.53755",
-            "RA": 1.2722222953846365e-05,
+            "RA": 1.908333479658155e-05,
             "Zion": [
                 6,
                 2
@@ -175,14 +194,15 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "CII 543"
+                        "name": "CII 543",
+                        "pix": [
+                            0
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
-                        "EW": {
-                            "unit": "Angstrom",
-                            "value": 0.0
-                        },
+                        "EW": 0.0,
                         "N": {
                             "unit": "1 / cm2",
                             "value": 616595001861481.0
@@ -195,10 +215,7 @@
                         "flag_EW": 0,
                         "flag_N": 0,
                         "logN": 14.79,
-                        "sig_EW": {
-                            "unit": "Angstrom",
-                            "value": 0.0
-                        },
+                        "sig_EW": -0.6503853533218432,
                         "sig_N": {
                             "unit": "1 / cm2",
                             "value": 0.0
@@ -297,14 +314,15 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "CII 560"
+                        "name": "CII 560",
+                        "pix": [
+                            0
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
-                        "EW": {
-                            "unit": "Angstrom",
-                            "value": 0.0
-                        },
+                        "EW": 0.0,
                         "N": {
                             "unit": "1 / cm2",
                             "value": 616595001861481.0
@@ -317,10 +335,7 @@
                         "flag_EW": 0,
                         "flag_N": 0,
                         "logN": 14.79,
-                        "sig_EW": {
-                            "unit": "Angstrom",
-                            "value": 0.0
-                        },
+                        "sig_EW": -0.6503853533218432,
                         "sig_N": {
                             "unit": "1 / cm2",
                             "value": 0.0
@@ -419,14 +434,15 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "CII 594"
+                        "name": "CII 594",
+                        "pix": [
+                            0
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
-                        "EW": {
-                            "unit": "Angstrom",
-                            "value": 0.0
-                        },
+                        "EW": 0.0,
                         "N": {
                             "unit": "1 / cm2",
                             "value": 616595001861481.0
@@ -439,10 +455,7 @@
                         "flag_EW": 0,
                         "flag_N": 0,
                         "logN": 14.79,
-                        "sig_EW": {
-                            "unit": "Angstrom",
-                            "value": 0.0
-                        },
+                        "sig_EW": -0.6503853533218432,
                         "sig_N": {
                             "unit": "1 / cm2",
                             "value": 0.0
@@ -541,13 +554,32 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "CII 687"
+                        "name": "CII 687",
+                        "pix": [
+                            791,
+                            792,
+                            793,
+                            794,
+                            795,
+                            796,
+                            797,
+                            798,
+                            799,
+                            800,
+                            801,
+                            802,
+                            803,
+                            804,
+                            805,
+                            806
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": -1.2978691631717159
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -558,12 +590,12 @@
                             "unit": "km / s",
                             "value": 122.7
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 3,
                         "flag_N": 0,
                         "logN": 14.79,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 1.122140675013254
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -663,13 +695,35 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "CII 858"
+                        "name": "CII 858",
+                        "pix": [
+                            1980,
+                            1981,
+                            1982,
+                            1983,
+                            1984,
+                            1985,
+                            1986,
+                            1987,
+                            1988,
+                            1989,
+                            1990,
+                            1991,
+                            1992,
+                            1993,
+                            1994,
+                            1995,
+                            1996,
+                            1997,
+                            1998
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 1.9340907510765346
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -680,12 +734,12 @@
                             "unit": "km / s",
                             "value": 122.7
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 14.79,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.018136620727668126
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -785,13 +839,36 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "CII 903a"
+                        "name": "CII 903a",
+                        "pix": [
+                            2420,
+                            2421,
+                            2422,
+                            2423,
+                            2424,
+                            2425,
+                            2426,
+                            2427,
+                            2428,
+                            2429,
+                            2430,
+                            2431,
+                            2432,
+                            2433,
+                            2434,
+                            2435,
+                            2436,
+                            2437,
+                            2438,
+                            2439
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 2.0215998906463057
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -802,12 +879,12 @@
                             "unit": "km / s",
                             "value": 122.7
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 14.79,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.02570617002700179
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -907,13 +984,36 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "CII 903b"
+                        "name": "CII 903b",
+                        "pix": [
+                            2423,
+                            2424,
+                            2425,
+                            2426,
+                            2427,
+                            2428,
+                            2429,
+                            2430,
+                            2431,
+                            2432,
+                            2433,
+                            2434,
+                            2435,
+                            2436,
+                            2437,
+                            2438,
+                            2439,
+                            2440,
+                            2441,
+                            2442
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 2.00991672432729
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -924,12 +1024,12 @@
                             "unit": "km / s",
                             "value": 122.7
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 14.79,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.02774514792862414
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -1029,13 +1129,38 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "CII 1036"
+                        "name": "CII 1036",
+                        "pix": [
+                            3699,
+                            3700,
+                            3701,
+                            3702,
+                            3703,
+                            3704,
+                            3705,
+                            3706,
+                            3707,
+                            3708,
+                            3709,
+                            3710,
+                            3711,
+                            3712,
+                            3713,
+                            3714,
+                            3715,
+                            3716,
+                            3717,
+                            3718,
+                            3719,
+                            3720
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.7462597299548436
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -1046,12 +1171,12 @@
                             "unit": "km / s",
                             "value": 122.7
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 14.79,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.10286115386393155
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -1151,13 +1276,45 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "CII 1334"
+                        "name": "CII 1334",
+                        "pix": [
+                            6562,
+                            6563,
+                            6564,
+                            6565,
+                            6566,
+                            6567,
+                            6568,
+                            6569,
+                            6570,
+                            6571,
+                            6572,
+                            6573,
+                            6574,
+                            6575,
+                            6576,
+                            6577,
+                            6578,
+                            6579,
+                            6580,
+                            6581,
+                            6582,
+                            6583,
+                            6584,
+                            6585,
+                            6586,
+                            6587,
+                            6588,
+                            6589,
+                            6590
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": -0.1949879000279361
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -1168,12 +1325,12 @@
                             "unit": "km / s",
                             "value": 122.7
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 3,
                         "flag_N": 0,
                         "logN": 14.79,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 1.0109723844280543
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -1277,10 +1434,10 @@
         },
         "HI_z0.53839": {
             "A": null,
-            "DEC": 5.055553714435065e-06,
+            "DEC": 7.583329651092242e-06,
             "Ej": 0.0,
             "Name": "HI_z0.53839",
-            "RA": 1.2722222953846365e-05,
+            "RA": 1.908333479658155e-05,
             "Zion": [
                 1,
                 1
@@ -1296,13 +1453,37 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 912d"
+                        "name": "HI 912d",
+                        "pix": [
+                            2501,
+                            2502,
+                            2503,
+                            2504,
+                            2505,
+                            2506,
+                            2507,
+                            2508,
+                            2509,
+                            2510,
+                            2511,
+                            2512,
+                            2513,
+                            2514,
+                            2515,
+                            2516,
+                            2517,
+                            2518,
+                            2519,
+                            2520,
+                            2521
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 2.137196036998253
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -1313,12 +1494,12 @@
                             "unit": "km / s",
                             "value": 150.2
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 16.3,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.0204840079437514
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -1418,13 +1599,37 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 912e"
+                        "name": "HI 912e",
+                        "pix": [
+                            2502,
+                            2503,
+                            2504,
+                            2505,
+                            2506,
+                            2507,
+                            2508,
+                            2509,
+                            2510,
+                            2511,
+                            2512,
+                            2513,
+                            2514,
+                            2515,
+                            2516,
+                            2517,
+                            2518,
+                            2519,
+                            2520,
+                            2521,
+                            2522
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 2.1370935601427523
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -1435,12 +1640,12 @@
                             "unit": "km / s",
                             "value": 150.2
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 16.3,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.02048400896430689
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -1540,13 +1745,37 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 912f"
+                        "name": "HI 912f",
+                        "pix": [
+                            2503,
+                            2504,
+                            2505,
+                            2506,
+                            2507,
+                            2508,
+                            2509,
+                            2510,
+                            2511,
+                            2512,
+                            2513,
+                            2514,
+                            2515,
+                            2516,
+                            2517,
+                            2518,
+                            2519,
+                            2520,
+                            2521,
+                            2522,
+                            2523
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 2.136952473025802
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -1557,12 +1786,12 @@
                             "unit": "km / s",
                             "value": 150.2
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 16.3,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.020489453191302368
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -1662,13 +1891,37 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 912g"
+                        "name": "HI 912g",
+                        "pix": [
+                            2503,
+                            2504,
+                            2505,
+                            2506,
+                            2507,
+                            2508,
+                            2509,
+                            2510,
+                            2511,
+                            2512,
+                            2513,
+                            2514,
+                            2515,
+                            2516,
+                            2517,
+                            2518,
+                            2519,
+                            2520,
+                            2521,
+                            2522,
+                            2523
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 2.136952473025802
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -1679,12 +1932,12 @@
                             "unit": "km / s",
                             "value": 150.2
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 16.3,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.020489453191302368
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -1784,13 +2037,37 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 913a"
+                        "name": "HI 913a",
+                        "pix": [
+                            2504,
+                            2505,
+                            2506,
+                            2507,
+                            2508,
+                            2509,
+                            2510,
+                            2511,
+                            2512,
+                            2513,
+                            2514,
+                            2515,
+                            2516,
+                            2517,
+                            2518,
+                            2519,
+                            2520,
+                            2521,
+                            2522,
+                            2523,
+                            2524
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 2.1367826052983077
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -1801,12 +2078,12 @@
                             "unit": "km / s",
                             "value": 150.2
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 16.3,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.020500343027500693
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -1906,13 +2183,37 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 913b"
+                        "name": "HI 913b",
+                        "pix": [
+                            2505,
+                            2506,
+                            2507,
+                            2508,
+                            2509,
+                            2510,
+                            2511,
+                            2512,
+                            2513,
+                            2514,
+                            2515,
+                            2516,
+                            2517,
+                            2518,
+                            2519,
+                            2520,
+                            2521,
+                            2522,
+                            2523,
+                            2524,
+                            2525
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 2.1400975413572394
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -1923,12 +2224,12 @@
                             "unit": "km / s",
                             "value": 150.2
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 16.3,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.0202157313853518
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -2028,13 +2329,37 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 913c"
+                        "name": "HI 913c",
+                        "pix": [
+                            2506,
+                            2507,
+                            2508,
+                            2509,
+                            2510,
+                            2511,
+                            2512,
+                            2513,
+                            2514,
+                            2515,
+                            2516,
+                            2517,
+                            2518,
+                            2519,
+                            2520,
+                            2521,
+                            2522,
+                            2523,
+                            2524,
+                            2525,
+                            2526
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 2.133115516159963
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -2045,12 +2370,12 @@
                             "unit": "km / s",
                             "value": 150.2
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 16.3,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.02079772274089268
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -2150,13 +2475,38 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 913d"
+                        "name": "HI 913d",
+                        "pix": [
+                            2507,
+                            2508,
+                            2509,
+                            2510,
+                            2511,
+                            2512,
+                            2513,
+                            2514,
+                            2515,
+                            2516,
+                            2517,
+                            2518,
+                            2519,
+                            2520,
+                            2521,
+                            2522,
+                            2523,
+                            2524,
+                            2525,
+                            2526,
+                            2527,
+                            2528
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 2.233635544234712
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -2167,12 +2517,12 @@
                             "unit": "km / s",
                             "value": 150.2
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 16.3,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.021369847731537644
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -2272,13 +2622,37 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 913e"
+                        "name": "HI 913e",
+                        "pix": [
+                            2509,
+                            2510,
+                            2511,
+                            2512,
+                            2513,
+                            2514,
+                            2515,
+                            2516,
+                            2517,
+                            2518,
+                            2519,
+                            2520,
+                            2521,
+                            2522,
+                            2523,
+                            2524,
+                            2525,
+                            2526,
+                            2527,
+                            2528,
+                            2529
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 2.153182182245005
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -2289,12 +2663,12 @@
                             "unit": "km / s",
                             "value": 150.2
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 16.3,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.01907067335250538
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -2394,13 +2768,37 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 913f"
+                        "name": "HI 913f",
+                        "pix": [
+                            2510,
+                            2511,
+                            2512,
+                            2513,
+                            2514,
+                            2515,
+                            2516,
+                            2517,
+                            2518,
+                            2519,
+                            2520,
+                            2521,
+                            2522,
+                            2523,
+                            2524,
+                            2525,
+                            2526,
+                            2527,
+                            2528,
+                            2529,
+                            2530
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 2.146168685155302
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -2411,12 +2809,12 @@
                             "unit": "km / s",
                             "value": 150.2
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 16.3,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.019688748072258188
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -2516,13 +2914,31 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 913g"
+                        "name": "HI 913g",
+                        "pix": [
+                            2531,
+                            2532,
+                            2533,
+                            2534,
+                            2535,
+                            2536,
+                            2537,
+                            2538,
+                            2539,
+                            2540,
+                            2541,
+                            2542,
+                            2543,
+                            2544,
+                            2545
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 1.3985501647818168
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -2533,12 +2949,12 @@
                             "unit": "km / s",
                             "value": 70.8
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.64,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.027226504254154703
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -2638,13 +3054,31 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 914a"
+                        "name": "HI 914a",
+                        "pix": [
+                            2533,
+                            2534,
+                            2535,
+                            2536,
+                            2537,
+                            2538,
+                            2539,
+                            2540,
+                            2541,
+                            2542,
+                            2543,
+                            2544,
+                            2545,
+                            2546,
+                            2547
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 1.3604370171203708
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -2655,12 +3089,12 @@
                             "unit": "km / s",
                             "value": 70.8
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.64,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.029564849587911165
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -2760,13 +3194,32 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 914b"
+                        "name": "HI 914b",
+                        "pix": [
+                            2535,
+                            2536,
+                            2537,
+                            2538,
+                            2539,
+                            2540,
+                            2541,
+                            2542,
+                            2543,
+                            2544,
+                            2545,
+                            2546,
+                            2547,
+                            2548,
+                            2549,
+                            2550
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 1.356850431770608
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -2777,12 +3230,12 @@
                             "unit": "km / s",
                             "value": 70.8
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.64,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.03550223812104612
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -2882,13 +3335,32 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 914c"
+                        "name": "HI 914c",
+                        "pix": [
+                            2538,
+                            2539,
+                            2540,
+                            2541,
+                            2542,
+                            2543,
+                            2544,
+                            2545,
+                            2546,
+                            2547,
+                            2548,
+                            2549,
+                            2550,
+                            2551,
+                            2552,
+                            2553
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 1.282195337878587
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -2899,12 +3371,12 @@
                             "unit": "km / s",
                             "value": 70.8
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.64,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.0396736538658516
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -3004,13 +3476,32 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 914d"
+                        "name": "HI 914d",
+                        "pix": [
+                            2541,
+                            2542,
+                            2543,
+                            2544,
+                            2545,
+                            2546,
+                            2547,
+                            2548,
+                            2549,
+                            2550,
+                            2551,
+                            2552,
+                            2553,
+                            2554,
+                            2555,
+                            2556
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 1.1954120929189138
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -3021,12 +3512,12 @@
                             "unit": "km / s",
                             "value": 70.8
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.64,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.04532960030396726
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -3126,13 +3617,32 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 915a"
+                        "name": "HI 915a",
+                        "pix": [
+                            2545,
+                            2546,
+                            2547,
+                            2548,
+                            2549,
+                            2550,
+                            2551,
+                            2552,
+                            2553,
+                            2554,
+                            2555,
+                            2556,
+                            2557,
+                            2558,
+                            2559,
+                            2560
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 1.0506016216054066
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -3143,12 +3653,12 @@
                             "unit": "km / s",
                             "value": 70.8
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.64,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.05639013046684327
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -3248,13 +3758,32 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 915b"
+                        "name": "HI 915b",
+                        "pix": [
+                            2550,
+                            2551,
+                            2552,
+                            2553,
+                            2554,
+                            2555,
+                            2556,
+                            2557,
+                            2558,
+                            2559,
+                            2560,
+                            2561,
+                            2562,
+                            2563,
+                            2564,
+                            2565
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.838839474381356
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -3265,12 +3794,12 @@
                             "unit": "km / s",
                             "value": 70.8
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.64,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.07105365843253392
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -3370,13 +3899,32 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 916"
+                        "name": "HI 916",
+                        "pix": [
+                            2556,
+                            2557,
+                            2558,
+                            2559,
+                            2560,
+                            2561,
+                            2562,
+                            2563,
+                            2564,
+                            2565,
+                            2566,
+                            2567,
+                            2568,
+                            2569,
+                            2570,
+                            2571
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.6692379024404056
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -3387,12 +3935,12 @@
                             "unit": "km / s",
                             "value": 70.8
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.64,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.08307692389180535
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -3492,13 +4040,32 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 917"
+                        "name": "HI 917",
+                        "pix": [
+                            2563,
+                            2564,
+                            2565,
+                            2566,
+                            2567,
+                            2568,
+                            2569,
+                            2570,
+                            2571,
+                            2572,
+                            2573,
+                            2574,
+                            2575,
+                            2576,
+                            2577,
+                            2578
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.3759011709927756
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -3509,12 +4076,12 @@
                             "unit": "km / s",
                             "value": 70.8
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.64,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.09561618851658195
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -3614,13 +4181,31 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 918"
+                        "name": "HI 918",
+                        "pix": [
+                            2573,
+                            2574,
+                            2575,
+                            2576,
+                            2577,
+                            2578,
+                            2579,
+                            2580,
+                            2581,
+                            2582,
+                            2583,
+                            2584,
+                            2585,
+                            2586,
+                            2587
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.4019685259237744
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -3631,12 +4216,12 @@
                             "unit": "km / s",
                             "value": 70.8
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.64,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.0908741569190463
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -3736,13 +4321,32 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 919"
+                        "name": "HI 919",
+                        "pix": [
+                            2584,
+                            2585,
+                            2586,
+                            2587,
+                            2588,
+                            2589,
+                            2590,
+                            2591,
+                            2592,
+                            2593,
+                            2594,
+                            2595,
+                            2596,
+                            2597,
+                            2598,
+                            2599
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.722484609641348
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -3753,12 +4357,12 @@
                             "unit": "km / s",
                             "value": 70.8
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.64,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.07174922373224174
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -3858,13 +4462,31 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 920"
+                        "name": "HI 920",
+                        "pix": [
+                            2600,
+                            2601,
+                            2602,
+                            2603,
+                            2604,
+                            2605,
+                            2606,
+                            2607,
+                            2608,
+                            2609,
+                            2610,
+                            2611,
+                            2612,
+                            2613,
+                            2614
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.1523535065573663
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -3875,12 +4497,12 @@
                             "unit": "km / s",
                             "value": 70.8
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 3,
                         "flag_N": 0,
                         "logN": 15.64,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.0760166583109579
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -3980,13 +4602,32 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 923"
+                        "name": "HI 923",
+                        "pix": [
+                            2621,
+                            2622,
+                            2623,
+                            2624,
+                            2625,
+                            2626,
+                            2627,
+                            2628,
+                            2629,
+                            2630,
+                            2631,
+                            2632,
+                            2633,
+                            2634,
+                            2635,
+                            2636
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.24222582703054807
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -3997,12 +4638,12 @@
                             "unit": "km / s",
                             "value": 70.8
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.64,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.06626534021184795
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -4102,13 +4743,31 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 926"
+                        "name": "HI 926",
+                        "pix": [
+                            2651,
+                            2652,
+                            2653,
+                            2654,
+                            2655,
+                            2656,
+                            2657,
+                            2658,
+                            2659,
+                            2660,
+                            2661,
+                            2662,
+                            2663,
+                            2664,
+                            2665
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.23998396177423134
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -4119,12 +4778,12 @@
                             "unit": "km / s",
                             "value": 70.8
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.64,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.064175975325488
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -4224,13 +4883,32 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 930"
+                        "name": "HI 930",
+                        "pix": [
+                            2694,
+                            2695,
+                            2696,
+                            2697,
+                            2698,
+                            2699,
+                            2700,
+                            2701,
+                            2702,
+                            2703,
+                            2704,
+                            2705,
+                            2706,
+                            2707,
+                            2708,
+                            2709
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.4216058192628224
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -4241,12 +4919,12 @@
                             "unit": "km / s",
                             "value": 70.8
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.64,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.0676841472153314
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -4346,13 +5024,31 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 937"
+                        "name": "HI 937",
+                        "pix": [
+                            2763,
+                            2764,
+                            2765,
+                            2766,
+                            2767,
+                            2768,
+                            2769,
+                            2770,
+                            2771,
+                            2772,
+                            2773,
+                            2774,
+                            2775,
+                            2776,
+                            2777
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.587163052745821
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -4363,12 +5059,12 @@
                             "unit": "km / s",
                             "value": 70.8
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.64,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.05251942984973344
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -4468,13 +5164,32 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 949"
+                        "name": "HI 949",
+                        "pix": [
+                            2878,
+                            2879,
+                            2880,
+                            2881,
+                            2882,
+                            2883,
+                            2884,
+                            2885,
+                            2886,
+                            2887,
+                            2888,
+                            2889,
+                            2890,
+                            2891,
+                            2892,
+                            2893
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.7272202568016305
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -4485,12 +5200,12 @@
                             "unit": "km / s",
                             "value": 70.8
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.64,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.053496526630946284
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -4590,13 +5305,32 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 972"
+                        "name": "HI 972",
+                        "pix": [
+                            3098,
+                            3099,
+                            3100,
+                            3101,
+                            3102,
+                            3103,
+                            3104,
+                            3105,
+                            3106,
+                            3107,
+                            3108,
+                            3109,
+                            3110,
+                            3111,
+                            3112,
+                            3113
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.744129739427976
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -4607,12 +5341,12 @@
                             "unit": "km / s",
                             "value": 70.8
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.64,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.05664007440760074
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -4712,13 +5446,33 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 1025"
+                        "name": "HI 1025",
+                        "pix": [
+                            3611,
+                            3612,
+                            3613,
+                            3614,
+                            3615,
+                            3616,
+                            3617,
+                            3618,
+                            3619,
+                            3620,
+                            3621,
+                            3622,
+                            3623,
+                            3624,
+                            3625,
+                            3626,
+                            3627
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.9828408027322437
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -4729,12 +5483,12 @@
                             "unit": "km / s",
                             "value": 70.8
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.64,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.069631440550058
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -4834,13 +5588,36 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "HI 1215"
+                        "name": "HI 1215",
+                        "pix": [
+                            5439,
+                            5440,
+                            5441,
+                            5442,
+                            5443,
+                            5444,
+                            5445,
+                            5446,
+                            5447,
+                            5448,
+                            5449,
+                            5450,
+                            5451,
+                            5452,
+                            5453,
+                            5454,
+                            5455,
+                            5456,
+                            5457,
+                            5458
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 1.92172079024678
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -4851,12 +5628,12 @@
                             "unit": "km / s",
                             "value": 70.8
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.64,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.07379258950390573
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -4960,10 +5737,10 @@
         },
         "OI_z0.53804": {
             "A": null,
-            "DEC": 5.055553714435065e-06,
+            "DEC": 7.583329651092242e-06,
             "Ej": 0.0,
             "Name": "OI_z0.53804",
-            "RA": 1.2722222953846365e-05,
+            "RA": 1.908333479658155e-05,
             "Zion": [
                 8,
                 1
@@ -4979,14 +5756,15 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "OI 791"
+                        "name": "OI 791",
+                        "pix": [
+                            1648
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
-                        "EW": {
-                            "unit": "Angstrom",
-                            "value": 0.0
-                        },
+                        "EW": 0.0,
                         "N": {
                             "unit": "1 / cm2",
                             "value": 1584893192461111.0
@@ -4999,10 +5777,7 @@
                         "flag_EW": 0,
                         "flag_N": 0,
                         "logN": 15.2,
-                        "sig_EW": {
-                            "unit": "Angstrom",
-                            "value": 0.0
-                        },
+                        "sig_EW": -0.6501781488127747,
                         "sig_N": {
                             "unit": "1 / cm2",
                             "value": 0.0
@@ -5101,13 +5876,25 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "OI 877a"
+                        "name": "OI 877a",
+                        "pix": [
+                            2173,
+                            2174,
+                            2175,
+                            2176,
+                            2177,
+                            2178,
+                            2179,
+                            2180,
+                            2181
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.922674581923519
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -5118,12 +5905,12 @@
                             "unit": "km / s",
                             "value": 80.1
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.2,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.010942259642419848
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -5223,13 +6010,25 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "OI 877b"
+                        "name": "OI 877b",
+                        "pix": [
+                            2174,
+                            2175,
+                            2176,
+                            2177,
+                            2178,
+                            2179,
+                            2180,
+                            2181,
+                            2182
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.9217044119960721
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -5240,12 +6039,12 @@
                             "unit": "km / s",
                             "value": 80.1
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.2,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.01127150057190492
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -5345,13 +6144,26 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "OI 921"
+                        "name": "OI 921",
+                        "pix": [
+                            2598,
+                            2599,
+                            2600,
+                            2601,
+                            2602,
+                            2603,
+                            2604,
+                            2605,
+                            2606,
+                            2607
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.18209907310594323
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -5362,12 +6174,12 @@
                             "unit": "km / s",
                             "value": 80.1
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 3,
                         "flag_N": 0,
                         "logN": 15.2,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.06168930893997469
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -5467,13 +6279,26 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "OI 924"
+                        "name": "OI 924",
+                        "pix": [
+                            2628,
+                            2629,
+                            2630,
+                            2631,
+                            2632,
+                            2633,
+                            2634,
+                            2635,
+                            2636,
+                            2637
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.004064558158304536
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -5484,12 +6309,12 @@
                             "unit": "km / s",
                             "value": 80.1
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 3,
                         "flag_N": 0,
                         "logN": 15.2,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.05631744292307574
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -5589,13 +6414,26 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "OI 929"
+                        "name": "OI 929",
+                        "pix": [
+                            2672,
+                            2673,
+                            2674,
+                            2675,
+                            2676,
+                            2677,
+                            2678,
+                            2679,
+                            2680,
+                            2681
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.03945017887653901
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -5606,12 +6444,12 @@
                             "unit": "km / s",
                             "value": 80.1
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 3,
                         "flag_N": 0,
                         "logN": 15.2,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.05895056030232364
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -5711,13 +6549,26 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "OI 930"
+                        "name": "OI 930",
+                        "pix": [
+                            2679,
+                            2680,
+                            2681,
+                            2682,
+                            2683,
+                            2684,
+                            2685,
+                            2686,
+                            2687,
+                            2688
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.15046338651234314
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -5728,12 +6579,12 @@
                             "unit": "km / s",
                             "value": 80.1
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 3,
                         "flag_N": 0,
                         "logN": 15.2,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.05961052001862667
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -5833,13 +6684,26 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "OI 936"
+                        "name": "OI 936",
+                        "pix": [
+                            2741,
+                            2742,
+                            2743,
+                            2744,
+                            2745,
+                            2746,
+                            2747,
+                            2748,
+                            2749,
+                            2750
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.28341238652152523
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -5850,12 +6714,12 @@
                             "unit": "km / s",
                             "value": 80.1
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.2,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.045092454225114875
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -5955,13 +6819,26 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "OI 948"
+                        "name": "OI 948",
+                        "pix": [
+                            2857,
+                            2858,
+                            2859,
+                            2860,
+                            2861,
+                            2862,
+                            2863,
+                            2864,
+                            2865,
+                            2866
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.2602855048791178
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -5972,12 +6849,12 @@
                             "unit": "km / s",
                             "value": 80.1
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.2,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.0482779045853819
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -6077,13 +6954,26 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "OI 950"
+                        "name": "OI 950",
+                        "pix": [
+                            2878,
+                            2879,
+                            2880,
+                            2881,
+                            2882,
+                            2883,
+                            2884,
+                            2885,
+                            2886,
+                            2887
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.6562940920557856
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -6094,12 +6984,12 @@
                             "unit": "km / s",
                             "value": 80.1
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.2,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.03468064121878255
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -6199,13 +7089,27 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "OI 971"
+                        "name": "OI 971",
+                        "pix": [
+                            3079,
+                            3080,
+                            3081,
+                            3082,
+                            3083,
+                            3084,
+                            3085,
+                            3086,
+                            3087,
+                            3088,
+                            3089
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.2401118232516925
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -6216,12 +7120,12 @@
                             "unit": "km / s",
                             "value": 80.1
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.2,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.05523848933164784
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -6321,13 +7225,26 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "OI 976"
+                        "name": "OI 976",
+                        "pix": [
+                            3125,
+                            3126,
+                            3127,
+                            3128,
+                            3129,
+                            3130,
+                            3131,
+                            3132,
+                            3133,
+                            3134
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.05438780986922582
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -6338,12 +7255,12 @@
                             "unit": "km / s",
                             "value": 80.1
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 3,
                         "flag_N": 0,
                         "logN": 15.2,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.05863766768202613
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -6443,13 +7360,27 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "OI 988a"
+                        "name": "OI 988a",
+                        "pix": [
+                            3241,
+                            3242,
+                            3243,
+                            3244,
+                            3245,
+                            3246,
+                            3247,
+                            3248,
+                            3249,
+                            3250,
+                            3251
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.5602919135007014
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -6460,12 +7391,12 @@
                             "unit": "km / s",
                             "value": 80.1
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.2,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.04827559573239458
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -6565,13 +7496,27 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "OI 988b"
+                        "name": "OI 988b",
+                        "pix": [
+                            3242,
+                            3243,
+                            3244,
+                            3245,
+                            3246,
+                            3247,
+                            3248,
+                            3249,
+                            3250,
+                            3251,
+                            3252
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.6191768246710719
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -6582,12 +7527,12 @@
                             "unit": "km / s",
                             "value": 80.1
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.2,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.045979056679433396
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -6687,13 +7632,27 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "OI 988"
+                        "name": "OI 988",
+                        "pix": [
+                            3243,
+                            3244,
+                            3245,
+                            3246,
+                            3247,
+                            3248,
+                            3249,
+                            3250,
+                            3251,
+                            3252,
+                            3253
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.6224216363706416
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -6704,12 +7663,12 @@
                             "unit": "km / s",
                             "value": 80.1
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.2,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.04586872790485724
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -6809,13 +7768,27 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "OI 1025"
+                        "name": "OI 1025",
+                        "pix": [
+                            3600,
+                            3601,
+                            3602,
+                            3603,
+                            3604,
+                            3605,
+                            3606,
+                            3607,
+                            3608,
+                            3609,
+                            3610
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.8981789577784657
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -6826,12 +7799,12 @@
                             "unit": "km / s",
                             "value": 80.1
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.2,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.040541987391869205
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -6931,13 +7904,28 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "OI 1039"
+                        "name": "OI 1039",
+                        "pix": [
+                            3729,
+                            3730,
+                            3731,
+                            3732,
+                            3733,
+                            3734,
+                            3735,
+                            3736,
+                            3737,
+                            3738,
+                            3739,
+                            3740
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.28828364288103037
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -6948,12 +7936,12 @@
                             "unit": "km / s",
                             "value": 80.1
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 15.2,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.0811204258867757
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -7053,13 +8041,30 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "OI 1302"
+                        "name": "OI 1302",
+                        "pix": [
+                            6255,
+                            6256,
+                            6257,
+                            6258,
+                            6259,
+                            6260,
+                            6261,
+                            6262,
+                            6263,
+                            6264,
+                            6265,
+                            6266,
+                            6267,
+                            6268
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.04369435336793772
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -7070,12 +8075,12 @@
                             "unit": "km / s",
                             "value": 80.1
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 3,
                         "flag_N": 0,
                         "logN": 15.2,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.35230627679319027
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -7179,10 +8184,10 @@
         },
         "OVI_z0.53854": {
             "A": null,
-            "DEC": 5.055553714435065e-06,
+            "DEC": 7.583329651092242e-06,
             "Ej": 0.0,
             "Name": "OVI_z0.53854",
-            "RA": 1.2722222953846365e-05,
+            "RA": 1.908333479658155e-05,
             "Zion": [
                 8,
                 6
@@ -7198,13 +8203,32 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "OVI 1031"
+                        "name": "OVI 1031",
+                        "pix": [
+                            3671,
+                            3672,
+                            3673,
+                            3674,
+                            3675,
+                            3676,
+                            3677,
+                            3678,
+                            3679,
+                            3680,
+                            3681,
+                            3682,
+                            3683,
+                            3684,
+                            3685,
+                            3686
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.22216545298190976
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -7215,12 +8239,12 @@
                             "unit": "km / s",
                             "value": 0.0
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 3,
                         "flag_N": 0,
                         "logN": 0.0,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.09669853214775996
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -7320,13 +8344,26 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "OVI 1037"
+                        "name": "OVI 1037",
+                        "pix": [
+                            3729,
+                            3730,
+                            3731,
+                            3732,
+                            3733,
+                            3734,
+                            3735,
+                            3736,
+                            3737,
+                            3738
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.1996706569089687
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -7337,12 +8374,12 @@
                             "unit": "km / s",
                             "value": 0.0
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 3,
                         "flag_N": 0,
                         "logN": 0.0,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.07573107710876803
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -7446,10 +8483,10 @@
         },
         "SiIII_z0.53900": {
             "A": null,
-            "DEC": 5.055553714435065e-06,
+            "DEC": 7.583329651092242e-06,
             "Ej": 0.0,
             "Name": "SiIII_z0.53900",
-            "RA": 1.2722222953846365e-05,
+            "RA": 1.908333479658155e-05,
             "Zion": [
                 14,
                 3
@@ -7465,13 +8502,39 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "SiIII 1206"
+                        "name": "SiIII 1206",
+                        "pix": [
+                            5344,
+                            5345,
+                            5346,
+                            5347,
+                            5348,
+                            5349,
+                            5350,
+                            5351,
+                            5352,
+                            5353,
+                            5354,
+                            5355,
+                            5356,
+                            5357,
+                            5358,
+                            5359,
+                            5360,
+                            5361,
+                            5362,
+                            5363,
+                            5364,
+                            5365,
+                            5366
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.747670877076264
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -7482,12 +8545,12 @@
                             "unit": "km / s",
                             "value": 196.76749272056972
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 13.633736378259048,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.14619970651104713
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -7591,10 +8654,10 @@
         },
         "SiII_z0.53819": {
             "A": null,
-            "DEC": 5.055553714435065e-06,
+            "DEC": 7.583329651092242e-06,
             "Ej": 0.0,
             "Name": "SiII_z0.53819",
-            "RA": 1.2722222953846365e-05,
+            "RA": 1.908333479658155e-05,
             "Zion": [
                 14,
                 2
@@ -7610,13 +8673,34 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "SiII 889"
+                        "name": "SiII 889",
+                        "pix": [
+                            2289,
+                            2290,
+                            2291,
+                            2292,
+                            2293,
+                            2294,
+                            2295,
+                            2296,
+                            2297,
+                            2298,
+                            2299,
+                            2300,
+                            2301,
+                            2302,
+                            2303,
+                            2304,
+                            2305,
+                            2306
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 1.8453338631292862
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -7627,12 +8711,12 @@
                             "unit": "km / s",
                             "value": 43.28081996654725
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 13.528378982396244,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.017631849111711874
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -7732,13 +8816,36 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "SiII 989"
+                        "name": "SiII 989",
+                        "pix": [
+                            3255,
+                            3256,
+                            3257,
+                            3258,
+                            3259,
+                            3260,
+                            3261,
+                            3262,
+                            3263,
+                            3264,
+                            3265,
+                            3266,
+                            3267,
+                            3268,
+                            3269,
+                            3270,
+                            3271,
+                            3272,
+                            3273,
+                            3274
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.9002227116104681
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -7749,12 +8856,12 @@
                             "unit": "km / s",
                             "value": 43.28081996654725
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 1,
                         "flag_N": 0,
                         "logN": 13.528378982396244,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.0688304704109193
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -7854,13 +8961,37 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "SiII 1020"
+                        "name": "SiII 1020",
+                        "pix": [
+                            3552,
+                            3553,
+                            3554,
+                            3555,
+                            3556,
+                            3557,
+                            3558,
+                            3559,
+                            3560,
+                            3561,
+                            3562,
+                            3563,
+                            3564,
+                            3565,
+                            3566,
+                            3567,
+                            3568,
+                            3569,
+                            3570,
+                            3571,
+                            3572
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.11766835257842899
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -7871,12 +9002,12 @@
                             "unit": "km / s",
                             "value": 43.28081996654725
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 3,
                         "flag_N": 0,
                         "logN": 13.528378982396244,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.10297885515970018
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -7976,13 +9107,39 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "SiII 1190"
+                        "name": "SiII 1190",
+                        "pix": [
+                            5185,
+                            5186,
+                            5187,
+                            5188,
+                            5189,
+                            5190,
+                            5191,
+                            5192,
+                            5193,
+                            5194,
+                            5195,
+                            5196,
+                            5197,
+                            5198,
+                            5199,
+                            5200,
+                            5201,
+                            5202,
+                            5203,
+                            5204,
+                            5205,
+                            5206,
+                            5207
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.04352572265421868
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -7993,12 +9150,12 @@
                             "unit": "km / s",
                             "value": 43.28081996654725
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 3,
                         "flag_N": 0,
                         "logN": 13.528378982396244,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.1591828763955669
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -8098,13 +9255,40 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "SiII 1193"
+                        "name": "SiII 1193",
+                        "pix": [
+                            5212,
+                            5213,
+                            5214,
+                            5215,
+                            5216,
+                            5217,
+                            5218,
+                            5219,
+                            5220,
+                            5221,
+                            5222,
+                            5223,
+                            5224,
+                            5225,
+                            5226,
+                            5227,
+                            5228,
+                            5229,
+                            5230,
+                            5231,
+                            5232,
+                            5233,
+                            5234,
+                            5235
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": -0.007273872165280918
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -8115,12 +9299,12 @@
                             "unit": "km / s",
                             "value": 43.28081996654725
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 3,
                         "flag_N": 0,
                         "logN": 13.528378982396244,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.16518397539514906
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -8220,13 +9404,41 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "SiII 1260"
+                        "name": "SiII 1260",
+                        "pix": [
+                            5857,
+                            5858,
+                            5859,
+                            5860,
+                            5861,
+                            5862,
+                            5863,
+                            5864,
+                            5865,
+                            5866,
+                            5867,
+                            5868,
+                            5869,
+                            5870,
+                            5871,
+                            5872,
+                            5873,
+                            5874,
+                            5875,
+                            5876,
+                            5877,
+                            5878,
+                            5879,
+                            5880,
+                            5881
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.5031260419477931
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -8237,12 +9449,12 @@
                             "unit": "km / s",
                             "value": 43.28081996654725
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 3,
                         "flag_N": 0,
                         "logN": 13.528378982396244,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.23337839607145344
                         },
                         "sig_N": {
                             "unit": "1 / cm2",
@@ -8342,13 +9554,42 @@
                         "flag_kin": 0,
                         "flg_eye": 0,
                         "flg_limit": 0,
-                        "name": "SiII 1304"
+                        "name": "SiII 1304",
+                        "pix": [
+                            6278,
+                            6279,
+                            6280,
+                            6281,
+                            6282,
+                            6283,
+                            6284,
+                            6285,
+                            6286,
+                            6287,
+                            6288,
+                            6289,
+                            6290,
+                            6291,
+                            6292,
+                            6293,
+                            6294,
+                            6295,
+                            6296,
+                            6297,
+                            6298,
+                            6299,
+                            6300,
+                            6301,
+                            6302,
+                            6303
+                        ],
+                        "spec_file": "/home/smailagic/COSLRGs/cos_lrg/data/spectra/J152013.99+253438.2.fits"
                     },
                     "attrib": {
                         "DEC": 2.5277771640709656e-06,
                         "EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": -0.15098717659882405
                         },
                         "N": {
                             "unit": "1 / cm2",
@@ -8359,12 +9600,12 @@
                             "unit": "km / s",
                             "value": 43.28081996654725
                         },
-                        "flag_EW": 0,
+                        "flag_EW": 3,
                         "flag_N": 0,
                         "logN": 13.528378982396244,
                         "sig_EW": {
                             "unit": "Angstrom",
-                            "value": 0.0
+                            "value": 0.523318841485506
                         },
                         "sig_N": {
                             "unit": "1 / cm2",

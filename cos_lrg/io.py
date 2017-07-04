@@ -106,7 +106,7 @@ def load_abssys(icoord, zlrg=None, foldername = 'lrg_xabssys'):
         print("You may need to rename your file")
         pdb.set_trace()
     # Load
-    abssys = IGMSystem.from_json(full_file)
+    abssys = IGMSystem.from_json(full_file,chk_vel=False,chk_sep=False, chk_z=False)
     # Return
     return abssys, full_file
 
