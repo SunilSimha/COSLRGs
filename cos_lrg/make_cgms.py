@@ -87,12 +87,9 @@ def make_cgmabs(icoord, towrite = True):
     dec = irow['DEC_GAL']*u.deg
     radec = (ra, dec)
     gal = make_gal(icoord)
-    #cgm1 = cgm.CGM(gal)
 
     igmsys, full_file = load_abssys(icoord,foldername='lrg_xabssys')
-    cgmabs_1 = cgm.CGMAbsSys(gal, igmsys,chk_vel=False,chk_sep=False, chk_z=False)
-    #cgm1.rlim = R_lrg
-    #cgm1.cgm_abs = cgmabs_1  # = List of CGMAbsSys classes
+    cgmabs_1 = cgm.CGMAbsSys(gal, igmsys)
 
     # write in a file
     if towrite:
@@ -102,7 +99,7 @@ def make_cgmabs(icoord, towrite = True):
 
 
 
-def make_survey(summ_file=None):  #, towrite = False):
+def make_survey(summ_file=None):
     """
         Make Survey object
 
@@ -124,21 +121,14 @@ def make_survey(summ_file=None):  #, towrite = False):
     #lrg_qso_coords = SkyCoord(ra=summ['RA_QSO'], dec=summ['DEC_QSO'], unit='deg')
     lrg_qso_coords = SkyCoord(ra=summ['RA_GAL'], dec=summ['DEC_GAL'], unit='deg')
     for icoords in lrg_qso_coords:
-        #pdb.set_trace()
         name = 'J{:s}{:s}'.format(
             icoords.ra.to_string(unit=u.hour,
                 sep='',pad=True, precision=2),icoords.dec.to_string(sep='',
                 pad=True,alwayssign=True, precision=1))
         icoord = get_coord(name)
-        #icgm = make_cgm(icoord)
         icgm = make_cgmabs(icoord)
         lrgs_cgmabs.append(icgm)
     LRGsurvey.cgm_abs = lrgs_cgmabs # list of CGMAbsSys objects - append for all LRGs
-
-    # and write it in a file
-    # this didn't work for now
-    #if towrite:
-    #    write_file('surveyfile',LRGsurvey,filename='LRGsurvey.json')
 
     return LRGsurvey
 
@@ -177,7 +167,7 @@ def ew_figure(LRGsurvey,iline='HI 1215',summ_file=None):
     for asys in abssystems:
         HIind = False
         for icomp in asys._components:
-            if icomp.name[0:2] == iline.split(' ')[0]:
+            if icomp.name[0:len(iline.split(' ')[0])] == iline.split(' ')[0]:
                 for jcomp in icomp._abslines:
                     if jcomp.name[0:len(iline)] == iline:
                         EW_iline.append(jcomp.attrib['EW'].value)
@@ -200,6 +190,5 @@ def ew_figure(LRGsurvey,iline='HI 1215',summ_file=None):
 
 
 
-### need to check data
 
 
