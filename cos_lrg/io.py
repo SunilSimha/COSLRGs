@@ -192,3 +192,45 @@ def load_summ(summ_file=None):
     #
     return summ
 
+
+### adding new function
+def write_file(datafolder, ndata, iicoord = None, suff = '', filename = None, summfile = None):
+    """
+      Writes the file
+    Parameters
+    ----------
+    filename : str
+      name of the file
+    datafolder : str
+      name of the new folder
+    ndata : dict
+      dict with data
+
+    Returns
+    -------
+
+    """
+    if summfile is None:
+        summfile = resource_filename('cos_lrg', 'data/hstselect_final.fits')
+    # new folder
+    lent = len(summfile.split('/')[-1])
+    folderpath = summfile[0:-lent] + datafolder + '/'
+    # Create new folder
+    try:
+        os.mkdir(folderpath)
+    except OSError:  # likely already exists
+        pass
+    # filename
+    # Build the filename
+    if filename == None:
+        if iicoord is not None:
+            coord = get_coord(iicoord)
+            ra = coord.ra.to_string(unit=u.hour, sep='', pad=True, precision=2)[0:4]
+            dec = coord.dec.to_string(sep='', pad=True, alwayssign=True, precision=1)[0:5]
+            filename = suff+'_J{:s}{:s}.json'.format(ra, dec)  # _z{:0.3f}
+    # Full file
+    full_filename = folderpath +filename
+    print("Writing/Overwriting file {:s} ?".format(full_filename))
+
+    # pdb.set_trace()
+    ndata.write_json(outfil=full_filename)

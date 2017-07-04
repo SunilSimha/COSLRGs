@@ -8,6 +8,7 @@ import os
 
 import numpy as np
 import glob as glob
+import matplotlib.pyplot as plt
 
 from astropy.table import Table
 from astropy.coordinates import SkyCoord
@@ -27,7 +28,7 @@ from pkg_resources import resource_filename
 
 from cos_lrg.utils import match_coord_to_summ
 from cos_lrg.utils import get_coord
-from cos_lrg.io import load_abssys, load_summ
+from cos_lrg.io import load_abssys, load_summ, write_file
 
 
 try:
@@ -61,7 +62,7 @@ def make_gal(icoord):
     return gal
 
 
-def make_cgm(icoord):
+def make_cgmabs(icoord, towrite = True):
     """
         Make CGM object
 
@@ -82,23 +83,22 @@ def make_cgm(icoord):
     dec = irow['DEC_GAL']*u.deg
     radec = (ra, dec)
     gal = make_gal(icoord)
-    cgm1 = cgm.CGM(gal)
+    #cgm1 = cgm.CGM(gal)
 
-    #radec_qso = (irow['RA_QSO']*u.deg, irow['DEC_QSO']*u.deg)   # e.g.
-    #igmsys = IGMSystem('CGM', radec_qso, gal.z,
-    #                   [-500, 500] * u.km / u.s)  # e.g. / or use existing one? #read from the file?
-    ## should read from file make_system's file
-    #igmsys, full_file = load_abssys(icoord,foldername='lrg_from_guesses')
     igmsys, full_file = load_abssys(icoord,foldername='lrg_xabssys')
     cgmabs_1 = cgm.CGMAbsSys(gal, igmsys)
-    cgm1.rlim = R_lrg
-    cgm1.cgm_abs = cgmabs_1  # = List of CGMAbsSys classes
+    #cgm1.rlim = R_lrg
+    #cgm1.cgm_abs = cgmabs_1  # = List of CGMAbsSys classes
 
-    return cgm1
+    # write in a file
+    if towrite:
+        write_file('cgmabs',cgmabs_1,iicoord = icoord, suff = 'cgmabs')
+
+    return cgmabs_1
 
 
 
-def make_survey(summ_file=None):
+def make_survey(summ_file=None):  #, towrite = False):
     """
         Make Survey object
 
@@ -125,42 +125,77 @@ def make_survey(summ_file=None):
             icoords.ra.to_string(unit=u.hour,
                 sep='',pad=True, precision=2),icoords.dec.to_string(sep='',
                 pad=True,alwayssign=True, precision=1))
-        #pdb.set_trace()
         icoord = get_coord(name)
-        icgm = make_cgm(icoord)
-        lrgs_cgmabs.append(icgm.cgm_abs)
+        #icgm = make_cgm(icoord)
+        icgm = make_cgmabs(icoord)
+        lrgs_cgmabs.append(icgm)
     LRGsurvey.cgm_abs = lrgs_cgmabs # list of CGMAbsSys objects - append for all LRGs
 
     # and write it in a file
+    # this didn't work for now
+    #if towrite:
+    #    write_file('surveyfile',LRGsurvey,filename='LRGsurvey.json')
 
     return LRGsurvey
 
 
-#def measure_ew_from_survey():
+
+def ew_figure(LRGsurvey,iline='HI 1215',summ_file=None):
+    """
+        Figure EW vs Rperp
+
+    Parameters
+    ----------
+    LRGsurvey : survey object
+    iline: str
+      line
+    summfile : str
+
+    Returns
+    -------
+    measured EWs for a survey
+    """
+    #Rperp and MgII
+    summ = load_summ(summ_file)
+    Rperp = summ['RP_MPC']*1000.
+    Mgiiind = summ['HAVE_MGII']
+    Mgiicol = []
+    for i in np.arange(len(Mgiiind)):
+        if Mgiiind[i] == 1:
+            Mgiicol.append('r')
+        else:
+            Mgiicol.append('b')
+
+    # EWs
+    abssystems = LRGsurvey.cgm_abs
+    EW_iline = []
+    EW_iline_sig = []
+    for asys in abssystems:
+        HIind = False
+        for icomp in asys._components:
+            if icomp.name[0:2] == iline.split(' ')[0]:
+                for jcomp in icomp._abslines:
+                    if jcomp.name[0:len(iline)] == iline:
+                        EW_iline.append(jcomp.attrib['EW'].value)
+                        EW_iline_sig.append(jcomp.attrib['sig_EW'].value)
+                        HIind = True
+        if HIind == False:
+            EW_iline.append(0)
+            EW_iline_sig.append(0)
+
+    # figure
+    for i in np.arange(len(Rperp)):
+        plt.plot([Rperp[i],Rperp[i]],[EW_iline[i]-EW_iline_sig[i], EW_iline[i]+EW_iline_sig[i] ],color=Mgiicol[i])
+        plt.scatter([Rperp[i]],[EW_iline[i]],c=Mgiicol[i])
+    plt.xlabel('R [kpc]')
+    plt.ylabel('EW('+iline+') ['+r'$\AA$'+']' )
+
+    plt.show()
+
+    return [Rperp, [EW_iline, EW_iline_sig]]
 
 
 
-
-
-
-
-
-
-#def ew_figure():
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### need to check data
 
 
