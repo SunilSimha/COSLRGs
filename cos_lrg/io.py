@@ -193,8 +193,7 @@ def load_summ(summ_file=None):
     return summ
 
 
-### adding new function
-def write_file(datafolder, ndata, iicoord = None, suff = '', filename = None, summfile = None):
+def write_cgmabs_file(datafolder, ndata, iicoord = None, suff = '', filename = None, summfile = None):
     """
       Writes the file
     Parameters
@@ -210,16 +209,19 @@ def write_file(datafolder, ndata, iicoord = None, suff = '', filename = None, su
     -------
 
     """
-    if summfile is None:
-        summfile = resource_filename('cos_lrg', 'data/hstselect_final.fits')
-    # new folder
-    lent = len(summfile.split('/')[-1])
-    folderpath = summfile[0:-lent] + datafolder + '/'
+    #if summfile is None:
+    #    summfile = resource_filename('cos_lrg', 'data/hstselect_final.fits')
+    ## new folder
+    #lent = len(summfile.split('/')[-1])
+    #folderpath = summfile[0:-lent] + datafolder + '/'
+
+    folderpath = resource_filename('cos_lrg', 'data/'+datafolder+'/')
+
     # Create new folder
-    try:
-        os.mkdir(folderpath)
-    except OSError:  # likely already exists
-        pass
+    #try:
+    #    os.mkdir(folderpath)
+    #except OSError:  # likely already exists
+    #    pass
     # filename
     # Build the filename
     if filename == None:
