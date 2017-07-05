@@ -162,22 +162,9 @@ def ew_figure(LRGsurvey,iline='HI 1215',summ_file=None):
         else:
             Mgiicol.append('b')
 
-    # EWs
-    abssystems = LRGsurvey.cgm_abs
-    EW_iline = []
-    EW_iline_sig = []
-    for asys in abssystems:
-        HIind = False
-        for icomp in asys._components:
-            if icomp.name[0:len(iline.split(' ')[0])] == iline.split(' ')[0]:
-                for jcomp in icomp._abslines:
-                    if jcomp.name[0:len(iline)] == iline:
-                        EW_iline.append(jcomp.attrib['EW'].value)
-                        EW_iline_sig.append(jcomp.attrib['sig_EW'].value)
-                        HIind = True
-        if HIind == False:
-            EW_iline.append(0)
-            EW_iline_sig.append(0)
+    tbl = LRGsurvey.trans_tbl(iline)
+    EW_iline = tbl['EW']
+    EW_iline_sig = tbl['sig_EW']
 
     # figure
     for i in np.arange(len(Rperp)):
