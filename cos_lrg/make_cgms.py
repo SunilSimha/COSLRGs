@@ -68,18 +68,24 @@ def make_gal(icoord):
     return gal
 
 
-def make_cgmabs(icoord, towrite = True):
+def make_cgmabs(icoord, towrite = False, fromfile = True, filename = None):
     """
-        Make CGM object
+        Make or read from file a CGMAbsSys object
 
     Parameters
     ----------
     icoord : SkyCoord or str
       e.g. J0026+0015
+    towrite : bool
+      write in files
+    fromfile : bool
+      read from file
+    filename : str
+      read CGM object from file
 
     Returns
     -------
-    cgm1 : CGM object
+    cgmabs_1 : CGMAbsSys object
 
     """
     irow = match_coord_to_summ(icoord)
@@ -88,27 +94,58 @@ def make_cgmabs(icoord, towrite = True):
     ra = irow['RA_GAL']*u.deg
     dec = irow['DEC_GAL']*u.deg
     radec = (ra, dec)
+
     gal = make_gal(icoord)
 
-    igmsys, full_file = load_abssys(icoord,foldername='lrg_xabssys')
-    cgmabs_1 = cgm.CGMAbsSys(gal, igmsys)
+    if fromfile == False:
+        igmsys, full_file = load_abssys(icoord,foldername='lrg_xabssys')
+        cgmabs_1 = cgm.CGMAbsSys(gal, igmsys)
+    else:
+        print('Not yet ready')
+        pass
+        ### not correct:   cgmabs_1 = cgm.CGMAbsSys.from_dict(filepath)
+        if filename == None:
+            datafolder = 'cgmabs'
+            suff = 'cgmabs'
+            folderpath = resource_filename('cos_lrg', 'data/' + datafolder + '/')
+            coord = get_coord(icoord)
+            ra = coord.ra.to_string(unit=u.hour, sep='', pad=True, precision=2)[0:4]
+            dec = coord.dec.to_string(sep='', pad=True, alwayssign=True, precision=1)[0:5]
+            filename = folderpath + suff + '_J{:s}{:s}.json'.format(ra, dec)  # _z{:0.3f}
+        # read dict from a file
+        cgmasdict = ltu.loadjson(filename)
+        # dict to CGMAbsSys
+        #igmsys = cgmasdict
+        #cgmasdict2 = {'galaxy': gal, 'igm_sys' : cgmasdict}
+        #pdb.set_trace()
+        cgmabs_1 = {'galaxy': gal, 'igm_sys' : cgmasdict}
+        #cgmabs1 = cgm.CGMAbsSys.from_dict(cgmasdict2)
+
 
     # write in a file
     if towrite:
-        write_cgmabs_file('cgmabs',cgmabs_1,iicoord = icoord, suff = 'cgmabs')
+        write_cgmabs_file(cgmabs_1,datafolder='cgmabs',iicoord = icoord, suff = 'cgmabs')
 
     return cgmabs_1
 
 
 
-def make_survey(summ_file=None):
+def make_survey(summ_file=None, towrite = True, fromfile = False, filename = None):
     """
         Make Survey object
+        option 1: Read from the CGMAbsSys JSON files
+        option 2: First make CGMAbsSys JSON files
 
     Parameters
     ----------
     summ_file : str
       summary file for the survey
+    towrite : bool
+      write in files CGMAbsSys (see make_cgmabs)
+    fromfile : bool
+      read from file CGMAbsSys (see make_cgmabs)
+    filename : str
+      read CGM object from file CGMAbsSys (see make_cgmabs)
 
     Returns
     -------
@@ -128,7 +165,7 @@ def make_survey(summ_file=None):
                 sep='',pad=True, precision=2),icoords.dec.to_string(sep='',
                 pad=True,alwayssign=True, precision=1))
         icoord = get_coord(name)
-        icgm = make_cgmabs(icoord)
+        icgm = make_cgmabs(icoord, towrite = towrite, fromfile = fromfile, filename = filename)
         lrgs_cgmabs.append(icgm)
     LRGsurvey.cgm_abs = lrgs_cgmabs # list of CGMAbsSys objects - append for all LRGs
 
@@ -167,9 +204,13 @@ def ew_figure(LRGsurvey,iline='HI 1215',summ_file=None):
     EW_iline_sig = tbl['sig_EW']
 
     # figure
-    for i in np.arange(len(Rperp)):
-        plt.plot([Rperp[i],Rperp[i]],[EW_iline[i]-EW_iline_sig[i], EW_iline[i]+EW_iline_sig[i] ],color=Mgiicol[i])
-        plt.scatter([Rperp[i]],[EW_iline[i]],c=Mgiicol[i])
+    #for i in np.arange(len(Rperp)):
+    #plt.plot([Rperp[i],Rperp[i]],[EW_iline[i]-EW_iline_sig[i], EW_iline[i]+EW_iline_sig[i] ],color=Mgiicol[i])
+    plt.scatter(Rperp,EW_iline,c=Mgiicol)
+    j = np.where(Mgiiind == 1)
+    plt.errorbar(Rperp, EW_iline, yerr=EW_iline_sig, ecolor='b', linestyle="None")
+    plt.errorbar(Rperp[j], EW_iline[j], yerr=EW_iline_sig[j], ecolor='r', linestyle="None")
+
     plt.xlabel('R [kpc]')
     plt.ylabel('EW('+iline+') ['+r'$\AA$'+']' )
 

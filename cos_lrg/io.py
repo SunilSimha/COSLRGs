@@ -193,7 +193,7 @@ def load_summ(summ_file=None):
     return summ
 
 
-def write_cgmabs_file(datafolder, ndata, iicoord = None, suff = '', filename = None, summfile = None):
+def write_cgmabs_file(ndata, datafolder = None, iicoord = None, suff = '', filename = None, summfile = None):
     """
       Writes the file
     Parameters
@@ -215,8 +215,10 @@ def write_cgmabs_file(datafolder, ndata, iicoord = None, suff = '', filename = N
     #lent = len(summfile.split('/')[-1])
     #folderpath = summfile[0:-lent] + datafolder + '/'
 
-    folderpath = resource_filename('cos_lrg', 'data/'+datafolder+'/')
+    if datafolder == None:
+        datafolder = 'cgmabs'
 
+    folderpath = resource_filename('cos_lrg', 'data/'+datafolder+'/')
     # Create new folder
     #try:
     #    os.mkdir(folderpath)
