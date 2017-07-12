@@ -4,7 +4,7 @@
 """
 
 import pdb
-from cos_lrg.io import load_abssys, load_summ
+from cos_lrg.io import load_abssys, load_summ, match_coord_to_summ
 from astropy.coordinates import SkyCoord
 import astropy.units as u
 
@@ -36,6 +36,7 @@ def main(args, unit_test=False, **kwargs):
 
     #
     icoords = []
+    names = []
     summ = load_summ()  # (summ_file=None)
     lrg_qso_coords = SkyCoord(ra=summ['RA_QSO'], dec=summ['DEC_QSO'], unit='deg')
     for iicoords in lrg_qso_coords:
@@ -44,16 +45,27 @@ def main(args, unit_test=False, **kwargs):
                                  sep='', pad=True, precision=2), iicoords.dec.to_string(sep='',
                                                                                        pad=True, alwayssign=True,
                                                                                        precision=1))
+        names.append(name)
         icoords.append(get_coord(name))
 
     # Loop on the systems
 
-    for icoord in icoords:
+    #for icoord,iicoord in icoords,lrg_qso_coords:
+    for iname in names:
         # Load the AbsSystem
-        abssys, filename = load_abssys(icoord, chk_z=False)
+        abssys, filename = load_abssys(iname, chk_z=False)
         # Set coords to QSO coords (abssys.coord, components.coord, abslines.coord)
+        ilrg_qso_coord = get_coord(iname)
+        abssys.coord = ilrg_qso_coord
+        for icomp in abssys._components:
+            icomp.coord = ilrg_qso_coord
+            for iline in icomp._abslines:
+                iline.attrib['coord'] = ilrg_qso_coord
         print(abssys)
         # Set zem to QSO zem
+        row = match_coord_to_summ(ilrg_qso_coord)
+        zqso = row['Z_QSO']
+        abssys.zem = zqso
         print("New zem = ", abssys.zem)
         # Reset vlim
         print("Original vlim = ", abssys.vlim)
