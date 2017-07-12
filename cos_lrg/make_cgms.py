@@ -88,6 +88,7 @@ def make_cgmabs(icoord, towrite = False, fromfile = True, filename = None):
     cgmabs_1 : CGMAbsSys object
 
     """
+    icoord = get_coord(icoord)
     irow = match_coord_to_summ(icoord)
     zlrg = irow['Z_GAL']
     R_lrg = irow['RP_MPC']*1000. #in kpc
@@ -98,7 +99,7 @@ def make_cgmabs(icoord, towrite = False, fromfile = True, filename = None):
     gal = make_gal(icoord)
 
     if fromfile == False:
-        igmsys, full_file = load_abssys(icoord,foldername='lrg_xabssys')
+        igmsys, full_file = load_abssys(icoord,foldername='lrg_xabssys', chk_z=False)
         cgmabs_1 = cgm.CGMAbsSys(gal, igmsys)
     else:
         print('Not yet ready')
