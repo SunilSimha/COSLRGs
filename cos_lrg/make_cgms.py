@@ -16,6 +16,7 @@ from astropy import units as u
 
 from linetools.isgm.abscomponent import AbsComponent as lt_abscomp
 from linetools import utils as ltu
+from linetools.analysis import plots as ltaplots
 from linetools.spectralline import AbsLine, SpectralLine
 from linetools.spectra.xspectrum1d import XSpectrum1D
 from pyigm.igm.igmsightline import IGMSightline
@@ -102,8 +103,8 @@ def make_cgmabs(icoord, towrite = False, fromfile = True, filename = None):
         igmsys, full_file = load_abssys(icoord,foldername='lrg_xabssys', chk_z=False)
         cgmabs_1 = cgm.CGMAbsSys(gal, igmsys)
     else:
-        print('Not yet ready')
-        pass
+        #print('Not yet ready')
+        #pass
         ### not correct:   cgmabs_1 = cgm.CGMAbsSys.from_dict(filepath)
         if filename == None:
             datafolder = 'cgmabs'
@@ -113,15 +114,17 @@ def make_cgmabs(icoord, towrite = False, fromfile = True, filename = None):
             ra = coord.ra.to_string(unit=u.hour, sep='', pad=True, precision=2)[0:4]
             dec = coord.dec.to_string(sep='', pad=True, alwayssign=True, precision=1)[0:5]
             filename = folderpath + suff + '_J{:s}{:s}.json'.format(ra, dec)  # _z{:0.3f}
-        # read dict from a file
+            # read dict from a file
+        print("Step1")
         cgmasdict = ltu.loadjson(filename)
+        print("Step2")
         # dict to CGMAbsSys
         #igmsys = cgmasdict
         #cgmasdict2 = {'galaxy': gal, 'igm_sys' : cgmasdict}
         #pdb.set_trace()
-        cgmabs_1 = {'galaxy': gal, 'igm_sys' : cgmasdict}
-        #cgmabs1 = cgm.CGMAbsSys.from_dict(cgmasdict2)
-
+        #cgmabs_1 = {'galaxy': gal, 'igm_sys' : cgmasdict}
+        cgmabs_1 = cgm.CGMAbsSys.from_dict(cgmasdict) #, chk_z=False)  ## ,chk_vel=False  ### here
+        print("Step3")
 
     # write in a file
     if towrite:
@@ -165,8 +168,8 @@ def make_survey(summ_file=None, towrite = True, fromfile = False, filename = Non
             icoords.ra.to_string(unit=u.hour,
                 sep='',pad=True, precision=2),icoords.dec.to_string(sep='',
                 pad=True,alwayssign=True, precision=1))
-        icoord = get_coord(name)
-        icgm = make_cgmabs(icoord, towrite = towrite, fromfile = fromfile, filename = filename)
+        #icoord = get_coord(name)
+        icgm = make_cgmabs(name, towrite = towrite, fromfile = fromfile, filename = filename) # icoord
         lrgs_cgmabs.append(icgm)
     LRGsurvey.cgm_abs = lrgs_cgmabs # list of CGMAbsSys objects - append for all LRGs
 
@@ -218,6 +221,64 @@ def ew_figure(LRGsurvey,iline='HI 1215',summ_file=None):
     plt.show()
 
     return [Rperp, [EW_iline, EW_iline_sig]]
+
+
+
+
+
+def stack_plots(ymnx=(-0.1, 1.5), return_fig=True, vlim = None):
+    """
+        Figure EW vs Rperp
+
+    Parameters
+    ----------
+    LRGsurvey : survey object
+    iline: str
+      line
+    summfile : str
+
+    Returns
+    -------
+    measured EWs for a survey
+    """
+
+    icoords = []
+    summ = load_summ()  # (summ_file=None)
+    lrg_qso_coords = SkyCoord(ra=summ['RA_QSO'], dec=summ['DEC_QSO'], unit='deg')
+    for iicoords in lrg_qso_coords:
+        name = 'J{:s}{:s}'.format(
+            iicoords.ra.to_string(unit=u.hour,
+                                  sep='', pad=True, precision=2), iicoords.dec.to_string(sep='',
+                                                                                         pad=True, alwayssign=True,
+                                                                                         precision=1))
+        icoords.append(get_coord(name))
+
+    for icoord in icoords:
+        cgmabss = make_cgmabs(icoord, towrite=False, fromfile=True, filename=None)
+
+        abslines = []
+        ews = []
+        sigews = []
+
+        for icomp in cgmabss.igm_sys._components:
+            for iline in icomp._abslines:
+                if iline.attrib['EW'] > abs(iline.attrib['sig_EW']):
+                    if iline.attrib['EW'] > 0:
+                        if iline.analy['do_analysis'] == 1:
+                            if iline.analy['flg_eye'] == 0:
+                                iline.analy['spec'] = XSpectrum1D.from_file(iline.analy['spec_file'])
+                                abslines.append(iline)
+                                ews.append(iline.attrib['EW'])
+                                sigews.append(iline.attrib['sig_EW'])
+                                #print(iline.attrib['EW'], iline.attrib['sig_EW'])
+
+        if vlim == None:
+            ivlim = cgmabss.vlim    #  * u.km / u.s
+            print('Setting vlim = ', ivlim)
+
+
+        ltaplots.stack_plot(abslines, vlim=ivlim, ymnx= ymnx, return_fig= return_fig)
+
 
 
 
