@@ -226,7 +226,7 @@ def ew_figure(LRGsurvey,iline='HI 1215',summ_file=None):
 
 
 
-def stack_plots(ymnx=(-0.1, 1.5), return_fig=True, vlim = None):
+def stack_plots(ymnx=(-0.35, 1.5), return_fig=True, vlim = None):
     """
         Figure EW vs Rperp
 
@@ -277,7 +277,7 @@ def stack_plots(ymnx=(-0.1, 1.5), return_fig=True, vlim = None):
             print('Setting vlim = ', ivlim)
 
 
-        ltaplots.stack_plot(abslines, vlim=ivlim, ymnx= ymnx, return_fig= return_fig)
+        ltaplots.stack_plot(abslines, vlim=ivlim, ymnx= ymnx, figsz=(14,11), return_fig= return_fig)
 
 
 
