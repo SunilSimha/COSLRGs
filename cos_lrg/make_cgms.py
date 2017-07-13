@@ -115,16 +115,16 @@ def make_cgmabs(icoord, towrite = False, fromfile = True, filename = None):
             dec = coord.dec.to_string(sep='', pad=True, alwayssign=True, precision=1)[0:5]
             filename = folderpath + suff + '_J{:s}{:s}.json'.format(ra, dec)  # _z{:0.3f}
             # read dict from a file
-        print("Step1")
+        #print("Step1")
         cgmasdict = ltu.loadjson(filename)
-        print("Step2")
+        #print("Step2")
         # dict to CGMAbsSys
         #igmsys = cgmasdict
         #cgmasdict2 = {'galaxy': gal, 'igm_sys' : cgmasdict}
         #pdb.set_trace()
         #cgmabs_1 = {'galaxy': gal, 'igm_sys' : cgmasdict}
         cgmabs_1 = cgm.CGMAbsSys.from_dict(cgmasdict) #, chk_z=False)  ## ,chk_vel=False  ### here
-        print("Step3")
+        #print("Step3")
 
     # write in a file
     if towrite:
