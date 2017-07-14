@@ -291,9 +291,11 @@ def stack_plots(ymnx=(-0.35, 1.5), return_fig=True, vlim = None, add_ew=True,nro
         wrests = [iline.wrest for iline in gdlines]
 
         pdb.set_trace()
-        if vlim == None:
+        if vlim is None:
             ivlim = cgmabss.vlim    #  * u.km / u.s
             print('Setting vlim = ', ivlim)
+        else:
+            ivlim = vlim
         if nrow == None:
             inrow = round((len(abslines)+1)/2)
         else:
