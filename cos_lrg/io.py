@@ -25,7 +25,8 @@ try:
 except NameError:  # For Python 3
     basestring = str
 
-def get_data():
+'''
+def get_data(path_to_files,datafile):
     """
     Getting files with data
 
@@ -69,7 +70,7 @@ def get_data():
             fileslist.append(ifile)
 
     return fileslist
-
+'''
 
 def load_abssys(icoord, zlrg=None, foldername = 'lrg_xabssys', chk_z=True):
     """ 

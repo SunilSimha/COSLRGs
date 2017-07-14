@@ -31,7 +31,7 @@ from pkg_resources import resource_filename
 
 from cos_lrg.utils import match_coord_to_summ
 from cos_lrg.utils import get_coord
-from cos_lrg.io import load_abssys, load_summ, write_cgmabs_file
+from cos_lrg.io import load_abssys, load_summ, write_cgmabs_file, load_guesses
 
 
 try:
@@ -226,7 +226,7 @@ def ew_figure(LRGsurvey,iline='HI 1215',summ_file=None):
 
 
 
-def stack_plots(ymnx=(-0.35, 1.5), return_fig=True, vlim = None):
+def stack_plots(ymnx=(-0.35, 1.5), return_fig=True, vlim = None, add_ew=True,nrow=None,outpfolder=None,tight_layout=False):
     """
         Figure EW vs Rperp
 
@@ -236,6 +236,9 @@ def stack_plots(ymnx=(-0.35, 1.5), return_fig=True, vlim = None):
     iline: str
       line
     summfile : str
+    outpfolder : str
+      output folder in which figures are saved.
+      None - figures will not be saved
 
     Returns
     -------
@@ -243,6 +246,7 @@ def stack_plots(ymnx=(-0.35, 1.5), return_fig=True, vlim = None):
     """
 
     icoords = []
+    names = []
     summ = load_summ()  # (summ_file=None)
     lrg_qso_coords = SkyCoord(ra=summ['RA_QSO'], dec=summ['DEC_QSO'], unit='deg')
     for iicoords in lrg_qso_coords:
@@ -251,10 +255,18 @@ def stack_plots(ymnx=(-0.35, 1.5), return_fig=True, vlim = None):
                                   sep='', pad=True, precision=2), iicoords.dec.to_string(sep='',
                                                                                          pad=True, alwayssign=True,
                                                                                          precision=1))
-        icoords.append(get_coord(name))
+        #icoords.append(get_coord(name))
+        names.append(name)
 
-    for icoord in icoords:
+    #for icoord in icoords:
+    for iname in names:
+        icoord = get_coord(iname)
         cgmabss = make_cgmabs(icoord, towrite=False, fromfile=True, filename=None)
+
+        ##load guesses and read reliability of components, if = a or b (or c) : add component
+        #igm_sys, guesses_file = load_guesses(iname)
+        # ...
+
 
         abslines = []
         ews = []
@@ -275,13 +287,14 @@ def stack_plots(ymnx=(-0.35, 1.5), return_fig=True, vlim = None):
         if vlim == None:
             ivlim = cgmabss.vlim    #  * u.km / u.s
             print('Setting vlim = ', ivlim)
+        if nrow == None:
+            inrow = round((len(abslines)+1)/2)
+        else:
+            inrow = nrow
 
-
-        ltaplots.stack_plot(abslines, vlim=ivlim, ymnx= ymnx, figsz=(14,11), return_fig= return_fig)
-
-
-
-
+        fig = ltaplots.stack_plot(abslines, vlim=ivlim, ymnx= ymnx, figsz=(14,11), return_fig=return_fig, add_ew=add_ew, nrow=inrow,tight_layout=tight_layout)
+        if outpfolder is not None:
+            fig.savefig(outpfolder+iname+'.jpg')
 
 
 
