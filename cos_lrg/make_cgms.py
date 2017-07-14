@@ -268,22 +268,29 @@ def stack_plots(ymnx=(-0.35, 1.5), return_fig=True, vlim = None, add_ew=True,nro
         # ...
 
 
-        abslines = []
-        ews = []
-        sigews = []
 
+        '''
         for icomp in cgmabss.igm_sys._components:
             for iline in icomp._abslines:
-                if iline.attrib['EW'] > abs(iline.attrib['sig_EW']):
-                    if iline.attrib['EW'] > 0:
-                        if iline.analy['do_analysis'] == 1:
-                            if iline.analy['flg_eye'] == 0:
-                                iline.analy['spec'] = XSpectrum1D.from_file(iline.analy['spec_file'])
-                                abslines.append(iline)
-                                ews.append(iline.attrib['EW'])
-                                sigews.append(iline.attrib['sig_EW'])
-                                #print(iline.attrib['EW'], iline.attrib['sig_EW'])
+                #if iline.attrib['EW'] > abs(iline.attrib['sig_EW']):
+                    #if iline.attrib['EW'] > 0:
+                if iline.analy['do_analysis'] == 1:
+                            #if iline.analy['flg_eye'] == 0:
+                    iline.analy['spec'] = XSpectrum1D.from_file(iline.analy['spec_file'])
+                    abslines.append(iline)
+                    #ews.append(iline.attrib['EW'])
+                    #sigews.append(iline.attrib['sig_EW'])
+                    #print(iline.attrib['EW'], iline.attrib['sig_EW'])
+        '''
+        all_alines = cgmabss.igm_sys.list_of_abslines()
+        gdlines = [iline for iline in all_alines if iline.analy['do_analysis'] == 1]
+        spec = XSpectrum1D.from_file(gdlines[0].analy['spec_file'])
+        ews = [iline.attrib['EW'] for iline in gdlines]
+        flagews = [iline.attrib['flag_EW'] for iline in gdlines]
 
+        wrests = [iline.wrest for iline in gdlines]
+
+        pdb.set_trace()
         if vlim == None:
             ivlim = cgmabss.vlim    #  * u.km / u.s
             print('Setting vlim = ', ivlim)
@@ -292,7 +299,7 @@ def stack_plots(ymnx=(-0.35, 1.5), return_fig=True, vlim = None, add_ew=True,nro
         else:
             inrow = nrow
 
-        fig = ltaplots.stack_plot(abslines, vlim=ivlim, ymnx= ymnx, figsz=(14,11), return_fig=return_fig, add_ew=add_ew, nrow=inrow,tight_layout=tight_layout)
+        fig = ltaplots.stack_plot(gdlines, vlim=ivlim, ymnx= ymnx,spec=spec,figsz=(14,11), return_fig=return_fig, add_ew=add_ew, nrow=inrow,tight_layout=tight_layout)
         if outpfolder is not None:
             fig.savefig(outpfolder+iname+'.jpg')
 
