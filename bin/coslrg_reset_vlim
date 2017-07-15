@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+#
+# See top-level LICENSE file for Copyright information
+#
+# -*- coding: utf-8 -*-
+
+
+"""
+This script measure EW for an LRG
+"""
+
+import cos_lrg.scripts.reset_vlim as reset_vlim
+
+if __name__ == '__main__':
+    args = reset_vlim.parser()
+    reset_vlim.main(args)
